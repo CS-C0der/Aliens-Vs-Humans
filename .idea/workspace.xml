@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Planet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/PlanetTest.java" afterDir="false" />
+    <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="add Planet enum and PlanetTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/WeaponTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/WeaponTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EntityTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +60,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlanetTest">
+  <component name="RunManager" selected="JUnit.EntityTest">
+    <configuration name="EntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Aliens-Vs-Humans" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EntityTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlanetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Aliens-Vs-Humans" />
       <option name="PACKAGE_NAME" value="" />
@@ -102,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EntityTest" />
         <item itemvalue="JUnit.PlanetTest" />
         <item itemvalue="JUnit.PlanetTest.planetTest" />
         <item itemvalue="JUnit.WeaponTest" />
@@ -118,6 +127,14 @@
       <option name="presentableId" value="Default" />
       <updated>1681978189857</updated>
     </task>
+    <task id="LOCAL-00001" summary="add Planet enum and PlanetTest">
+      <created>1682071521781</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682071521782</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,5 +147,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add Planet enum and PlanetTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Planet enum and PlanetTest" />
   </component>
 </project>
