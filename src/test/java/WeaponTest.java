@@ -9,9 +9,9 @@ class WeaponTest {
     @DisplayName("Test Weapon Name")
     public void testWeaponName(){
         assertEquals("Phaser", Weapon.PHASER.getName());
-        assertEquals("Plasma Cannon", Weapon.PLASMACANNON);
-        assertEquals("Crow Bar", Weapon.CROWBAR);
-        assertEquals("Shotgun", Weapon.SHOTGUN);
+        assertEquals("Plasma Cannon", Weapon.PLASMACANNON.getName());
+        assertEquals("Crow Bar", Weapon.CROWBAR.getName());
+        assertEquals("Shotgun", Weapon.SHOTGUN.getName());
         assertEquals("bare Hands", Weapon.NONE.getName());
     }
 
