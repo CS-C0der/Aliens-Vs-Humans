@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Planet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/PlanetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/WeaponTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/WeaponTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,26 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WeaponTest">
+  <component name="RunManager" selected="JUnit.PlanetTest">
+    <configuration name="PlanetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Aliens-Vs-Humans" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PlanetTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlanetTest.planetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Aliens-Vs-Humans" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PlanetTest" />
+      <option name="METHOD_NAME" value="planetTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WeaponTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Aliens-Vs-Humans" />
       <option name="PACKAGE_NAME" value="" />
@@ -81,6 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlanetTest" />
+        <item itemvalue="JUnit.PlanetTest.planetTest" />
         <item itemvalue="JUnit.WeaponTest" />
         <item itemvalue="JUnit.WeaponTest.testWeapon" />
       </list>

@@ -8,20 +8,24 @@ class WeaponTest {
     @Test
     @DisplayName("Test Weapon Name")
     public void testWeaponName(){
-        assertEquals("Phaser", Weapon.PHASER.getName());
-        assertEquals("Plasma Cannon", Weapon.PLASMACANNON.getName());
-        assertEquals("Crow Bar", Weapon.CROWBAR.getName());
-        assertEquals("Shotgun", Weapon.SHOTGUN.getName());
-        assertEquals("bare Hands", Weapon.NONE.getName());
+        assertAll(
+            () -> assertEquals("Phaser", Weapon.PHASER.getName()),
+            () -> assertEquals("Plasma Cannon", Weapon.PLASMACANNON.getName()),
+            () -> assertEquals("Crow Bar", Weapon.CROWBAR.getName()),
+            () -> assertEquals("Shotgun", Weapon.SHOTGUN.getName()),
+            () -> assertEquals("bare Hands", Weapon.NONE.getName())
+        );
     }
 
     @Test
     @DisplayName("Test Weapon Damage")
     public void testWeaponDamage(){
-        assertEquals(15, Weapon.PHASER.getDamage());
-        assertEquals(34, Weapon.PLASMACANNON.getDamage());
-        assertEquals(10, Weapon.CROWBAR.getDamage());
-        assertEquals(20, Weapon.SHOTGUN.getDamage());
-        assertEquals(5, Weapon.NONE.getDamage());
+        assertAll(
+            () -> assertEquals(15, Weapon.PHASER.getDamage()),
+            () -> assertEquals(34, Weapon.PLASMACANNON.getDamage()),
+            () -> assertEquals(10, Weapon.CROWBAR.getDamage()),
+            () -> assertEquals(20, Weapon.SHOTGUN.getDamage()),
+            () -> assertEquals(5, Weapon.NONE.getDamage())
+        );
     }
 }
