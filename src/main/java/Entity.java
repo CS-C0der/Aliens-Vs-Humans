@@ -4,44 +4,53 @@ public abstract class Entity {
     // private final Planet homePlanet;
     //private final String name;
     private int hitpoints = 100;
+    private String name;
     private boolean isAlive = true;
     private Weapon weapon;
     private Planet homePlanet;
 
     // constructor
     public Entity(Planet homePlanet, String name, Weapon weapon) {
-
+        this.homePlanet = homePlanet;
+        this.name = name;
+        this.weapon = weapon;
     }
 
-    // getter methods
+
 
     // setter methods
+    public void setWeapon(Weapon weapon){
+        this.weapon = weapon;
+    };
 
-    // Instance methods
-    public abstract int takeDamage();
-
-
+    // getter methods
     public Planet getHomePlanet(){
         return this.homePlanet;
     };
 
     public String getName(){
-        return "";
+        return name;
     }
 
     public int getHitpoints(){
-        return 0;
+        return hitpoints;
     };
 
     public boolean isAlive(){
-        return false;
+        return isAlive;
     };
 
     public Weapon getWeapon(){
-        return Weapon.NONE;
+        return weapon;
     };
 
-    public int getDamageUnarmed(){
-        return -1;
+    // Instance methods
+    public void takeDamage(int damage){
+
     };
+
+    public int doDamge(){
+        return weapon.getDamage();
+    };
+
 }

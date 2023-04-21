@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,24 +12,19 @@ class EntityTest {
             super(homePlanet, name, weapon);
         }
 
-        @Override
-        public int takeDamage(){
-            return -1;
-        }
     };
 
     private ConcreteEntity entity;
 
     @BeforeEach
     public void beforeEachTest(){
-        Planet homePlanet = Planet.MARS;
         String name = "Entity1";
-        Weapon weapon = Weapon.SHOTGUN;
+        entity = new ConcreteEntity(Planet.MARS, name, Weapon.SHOTGUN);
 
-        entity = new ConcreteEntity(homePlanet, name, weapon);
     }
 
     @Test
+    @DisplayName("Test Constructor (and getter methods)")
     public void testEntityConstructor(){
         assertAll(
                 () -> assertEquals(Planet.MARS, entity.getHomePlanet()),
@@ -38,4 +34,29 @@ class EntityTest {
                 () -> assertEquals(Weapon.SHOTGUN, entity.getWeapon())
         );
     }
+
+    // No Tests for getter methods needed
+    // Already tested functionality in testEntityConstructor()
+
+    @Test
+    public void testSetWeapon(){
+        // remember: @BeforeEach sets Weapon to shotgun
+        entity.setWeapon(Weapon.PHASER);
+        assertEquals(Weapon.PHASER.getName(), entity.getWeapon().getName());
+    }
+
+    // ToDo: test for takeDamage (can be implemented in Entity and later overwritten in Human and cat)
+    //  - if HP < 0 set isAlive = false
+    //  - override bei Katzen (lives)
+    //  - override Human (armor)
+
+    @Test
+    public void testDoDamage(){
+        // remember: @BeforeEach sets Weapon to shotgun (damage 20)
+        assertEquals(20,entity.doDamge() );
+        entity.setWeapon(Weapon.CROWBAR);
+        // different result with crowbar?
+        assertEquals(10,entity.doDamge() );
+    }
+
 }

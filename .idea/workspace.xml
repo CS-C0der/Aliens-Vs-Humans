@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="add Planet enum and PlanetTest">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/EntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EntityTest.java" afterDir="false" />
@@ -17,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,12 +61,32 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EntityTest">
+  <component name="RunManager" selected="JUnit.EntityTest.testDoDamage">
     <configuration name="EntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Aliens-Vs-Humans" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EntityTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EntityTest.testDoDamage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Aliens-Vs-Humans" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EntityTest" />
+      <option name="METHOD_NAME" value="testDoDamage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EntityTest.testSetWeapon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Aliens-Vs-Humans" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EntityTest" />
+      <option name="METHOD_NAME" value="testSetWeapon" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,32 +110,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WeaponTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Aliens-Vs-Humans" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WeaponTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WeaponTest.testWeapon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Aliens-Vs-Humans" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WeaponTest" />
-      <option name="METHOD_NAME" value="testWeapon" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EntityTest.testDoDamage" />
+        <item itemvalue="JUnit.EntityTest.testSetWeapon" />
         <item itemvalue="JUnit.EntityTest" />
         <item itemvalue="JUnit.PlanetTest" />
         <item itemvalue="JUnit.PlanetTest.planetTest" />
-        <item itemvalue="JUnit.WeaponTest" />
-        <item itemvalue="JUnit.WeaponTest.testWeapon" />
       </list>
     </recent_temporary>
   </component>
