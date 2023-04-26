@@ -1,3 +1,5 @@
+import entities.Entity;
+
 public class Battlefield {
 
     private String randomName(Entity entityToName){

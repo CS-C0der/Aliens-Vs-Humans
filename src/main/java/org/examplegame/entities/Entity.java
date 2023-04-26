@@ -1,19 +1,22 @@
+package entities;
+
+import
+
 public abstract class Entity {
 
     // Instance variables
-    // private final Planet homePlanet;
-    //private final String name;
-    private int hitpoints = 100;
+    protected int hitpoints;
     private String name;
-    private boolean isAlive = true;
+    protected boolean isAlive = true;
     private Weapon weapon;
-    private Planet homePlanet;
+    private final Planet homePlanet;
 
     // constructor
     public Entity(Planet homePlanet, String name, Weapon weapon) {
         this.homePlanet = homePlanet;
         this.name = name;
         this.weapon = weapon;
+        this.hitpoints = 100;
     }
 
 
@@ -22,6 +25,10 @@ public abstract class Entity {
     public void setWeapon(Weapon weapon){
         this.weapon = weapon;
     };
+
+    public void setName(String name){
+        this.name = name;
+    }
 
     // getter methods
     public Planet getHomePlanet(){
@@ -44,9 +51,21 @@ public abstract class Entity {
         return weapon;
     };
 
+    /**
+     * Reduces hitpoints of entity by the value of "damage".
+     * If Hitpoints equals or is below zero isAlive is
+     * set to false. Also Hitpoints is set to zero.
+     * Hitpoints can not become negative!
+     *
+     * @param damage Amount of Hitpoints to reduce
+     */
     // Instance methods
     public void takeDamage(int damage){
-
+        this.hitpoints -= damage;
+        if (this.hitpoints <= 0) {
+            this.isAlive = false;
+            this.hitpoints = 0;
+        }
     };
 
     public int doDamge(){
