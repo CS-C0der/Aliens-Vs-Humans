@@ -1,3 +1,5 @@
+package org.examplegame.entities;
+
 import org.examplegame.Planet;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,8 @@
-import entities.Entity;
+package org.examplegame.entities;
+
+import org.examplegame.Planet;
+import org.examplegame.Weapon;
+import org.examplegame.entities.Entity;
 
 public class Alien extends Entity {
 

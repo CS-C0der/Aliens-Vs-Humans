@@ -1,11 +1,13 @@
-import entities.Entity;
+package org.examplegame;
+
+import org.examplegame.entities.Entity;
 
 public class Battlefield {
 
     private String randomName(Entity entityToName){
-        // Array of Human names
-        // Array of Alien names
-        // Array of Cat names
+        // Array of org.examplegame.entities.Human names
+        // Array of org.examplegame.entities.Alien names
+        // Array of org.examplegame.entities.Cat names
 
         // case of blabla
 
@@ -14,6 +16,6 @@ public class Battlefield {
 
     private Weapon randomWeapon(Entity entityToArm){
         return Weapon.NONE;
-        // returns array of enum: Weapon.values()
+        // returns array of enum: org.examplegame.Weapon.values()
     }
 }

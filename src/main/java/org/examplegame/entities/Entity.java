@@ -1,6 +1,7 @@
-package entities;
+package org.examplegame.entities;
 
-import
+import org.examplegame.Planet;
+import org.examplegame.Weapon;
 
 public abstract class Entity {
 

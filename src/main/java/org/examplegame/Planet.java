@@ -1,3 +1,5 @@
+package org.examplegame;
+
 public enum Planet {
     EARTH,
     MARS,

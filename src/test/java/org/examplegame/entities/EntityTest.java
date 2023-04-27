@@ -1,3 +1,5 @@
+package org.examplegame.entities;
+
 import org.examplegame.entities.Entity;
 import org.examplegame.Planet;
 import org.examplegame.Weapon;
