@@ -29,7 +29,7 @@ class HumanTest {
     }
 
     @Test
-    @DisplayName("Test Constructor of org.examplegame.entities.Human")
+    @DisplayName("Test Constructor of Human")
     public void testHuman(){
 
         printNameList();
@@ -47,6 +47,19 @@ class HumanTest {
 
     }
 
+    @Test
+    @DisplayName("Test if armor affects takeDamage")
+    public void testTakeDamage(){
+        // hp and armor of each human set to 100 in beforeEach
+        human1.takeDamage(90);
+        assertEquals(10, human1.getArmor());
+        assertEquals(100, human1.getHitpoints());
+
+        human1.takeDamage(30);
+        assertEquals(0, human1.getArmor());
+        assertEquals(80, human1.getHitpoints());
+    }
+
     private boolean hasDublicateNames(ArrayList<Human> humans) {
         boolean dublicate = false;
         String name1 = humans.get(0).getName();
@@ -62,6 +75,9 @@ class HumanTest {
         return dublicate;
     }
 
+    /**
+     * Prints names of all Humans contained in humans list
+     */
     private void printNameList(){
         System.out.print("Names of humans: ");
         for (Human human : humans){

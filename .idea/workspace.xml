@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="add Planet enum and PlanetTest" />
+    <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="add Planet enum and PlanetTest">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/HumanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/HumanTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,18 +42,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;Current File&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_directory_selection&quot;: &quot;/home/jan/Dropbox/Programmieren/Codecademy/Aliens-Vs-Humans/src/test/java/org/examplegame/entities&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jan/Dropbox/Programmieren/Codecademy/Aliens-Vs-Humans&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "Current File",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_directory_selection": "/home/jan/Dropbox/Programmieren/Codecademy/Aliens-Vs-Humans/src/test/java/org/examplegame",
+    "last_opened_file_path": "/home/jan/Dropbox/Programmieren/Codecademy/Aliens-Vs-Humans"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -62,23 +66,18 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HumanTest.testHuman">
-    <configuration name="CatTest.testCat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.HumanTest">
+    <configuration name="HumanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Aliens-Vs-Humans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.examplegame.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="org.examplegame.entities" />
-      <option name="MAIN_CLASS_NAME" value="org.examplegame.entities.CatTest" />
-      <option name="METHOD_NAME" value="testCat" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CatTest.testTakeDamage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Aliens-Vs-Humans" />
-      <option name="PACKAGE_NAME" value="org.examplegame.entities" />
-      <option name="MAIN_CLASS_NAME" value="org.examplegame.entities.CatTest" />
-      <option name="METHOD_NAME" value="testTakeDamage" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.examplegame.entities.HumanTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,6 +93,22 @@
       <option name="PACKAGE_NAME" value="org.examplegame.entities" />
       <option name="MAIN_CLASS_NAME" value="org.examplegame.entities.HumanTest" />
       <option name="METHOD_NAME" value="testHuman" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HumanTest.testTakeDamage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Aliens-Vs-Humans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.examplegame.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.examplegame.entities" />
+      <option name="MAIN_CLASS_NAME" value="org.examplegame.entities.HumanTest" />
+      <option name="METHOD_NAME" value="testTakeDamage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HumanTest" />
+        <item itemvalue="JUnit.HumanTest.testTakeDamage" />
         <item itemvalue="JUnit.HumanTest.testHuman" />
         <item itemvalue="JUnit.WeaponTest.testGetRandom" />
         <item itemvalue="JUnit.WeaponTest.testWeaponDamage" />
-        <item itemvalue="JUnit.CatTest.testTakeDamage" />
-        <item itemvalue="JUnit.CatTest.testCat" />
       </list>
     </recent_temporary>
   </component>
