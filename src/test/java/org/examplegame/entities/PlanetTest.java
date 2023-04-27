@@ -1,3 +1,4 @@
+import org.examplegame.Planet;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlanetTest {
 
     @Test
-    @DisplayName("all Planet Constants exist")
+    @DisplayName("all org.examplegame.Planet Constants exist")
     public void planetTest(){
         assertAll(
                 () -> assertNotNull(Planet.EARTH),
