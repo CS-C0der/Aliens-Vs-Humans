@@ -1,4 +1,4 @@
-package org.examplegame.entities;
+package org.examplegame;
 
 import org.examplegame.Weapon;
 import org.junit.jupiter.api.DisplayName;
