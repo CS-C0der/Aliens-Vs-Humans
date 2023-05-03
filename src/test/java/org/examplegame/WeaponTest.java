@@ -37,13 +37,8 @@ class WeaponTest {
 
     @Test
     public void testGetRandom(){
-        //ToDO test getrandomweapon: darf kein none enthalten
-        //Weapons.getWeaponsExNone vergleichen mit selbstgemachter liste
-        // limits oben/unten testen
-        // https://stackoverflow.com/questions/14811014/writing-a-junit-test-for-a-random-number-generator
-        System.out.println("List of Weapons:" + Weapon.getWeaponsExNONE());
 
-        Weapon randomWeapon;
+        System.out.println("List of Weapons:" + Weapon.getWeaponsExNONE());
 
         // create Map to memorize amount of Weapon created per Weapon
         Map<Weapon, Integer> countPerWeapon = new HashMap<>();
@@ -52,35 +47,18 @@ class WeaponTest {
             countPerWeapon.put(weapon, 0);
         }
 
+        // generate many random weapons
+        Weapon randomWeapon;
         int currentAmount;
 
-        // generate many random weapons
         for (int i = 0; i < 50; i++){
             randomWeapon = Weapon.getRandom();
-
+            if (randomWeapon == Weapon.NONE){
+                fail("Weapon NONE should not be part of getRandom()");
+            }
             // memorize amount of how often a specific weapon is generated
-            switch (randomWeapon){
-
-                case PHASER -> {
-                    currentAmount = countPerWeapon.get(Weapon.PHASER);
-                    countPerWeapon.replace(Weapon.PHASER, currentAmount +1);
-                }
-                case PLASMACANNON -> {
-                    currentAmount = countPerWeapon.get(Weapon.PLASMACANNON);
-                    countPerWeapon.replace(Weapon.PLASMACANNON, currentAmount +1);
-                }
-                case CROWBAR -> {
-                    currentAmount = countPerWeapon.get(Weapon.CROWBAR);
-                    countPerWeapon.replace(Weapon.CROWBAR, currentAmount +1);
-                }
-                case SHOTGUN -> {
-                    currentAmount = countPerWeapon.get(Weapon.SHOTGUN);
-                    countPerWeapon.replace(Weapon.SHOTGUN, currentAmount +1);
-                }
-                default -> {
-                    fail("None should not be possible for getRandom()");
-                }
-            } // End of switch Statement
+            currentAmount = countPerWeapon.get(randomWeapon);
+            countPerWeapon.replace(randomWeapon, currentAmount +1);
 
         } // End of for loop
 
