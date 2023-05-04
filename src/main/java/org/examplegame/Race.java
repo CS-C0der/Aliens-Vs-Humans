@@ -6,13 +6,14 @@ import java.util.List;
 import java.util.Random;
 
 public enum Race {
-    FACEHUGGER("Facehugger"),
-    ZOMBIE("Zombie"),
-    KLINGON("Klingon"),
-    BORG("Borg"),
-    ALF("Alf");
+    FACEHUGGER("Facehugger", Planet.BLACKMESA),
+    ZOMBIE("Zombie", Planet.BLACKMESA),
+    KLINGON("Klingon", Planet.KRONOS),
+    BORG("Borg", Planet.DELTAQUADRANT),
+    ALF("Alf", Planet.MELMAC);
 
     private String name;
+    private Planet homePlanet;
     static private final List<Race> RacesExZombie;
     static {
         RacesExZombie = new ArrayList<>(Arrays.asList(Race.values()));
@@ -20,8 +21,9 @@ public enum Race {
     }
 
     // constructor
-    Race(String name){
+    Race(String name, Planet planet){
         this.name = name;
+        this.homePlanet = planet;
     }
 
     // class methods
@@ -35,4 +37,11 @@ public enum Race {
         return Race.RacesExZombie;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Planet getHomePlanet(){
+        return homePlanet;
+    }
 }
