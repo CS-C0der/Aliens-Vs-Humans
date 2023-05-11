@@ -29,13 +29,23 @@ public class Human extends Entity {
                 super(Planet.EARTH, "dummy", Weapon.getRandom());
                 this.armor = 100;
                 this.setName(getRandomName());
+                this.team = Team.HUMANS;
+        }
+
+        /**
+         * Sets the values of nameLibary to 0 for every Name
+         */
+        public static void resetNameLibary(){
+                for (String name : humanNames){
+                        nameLibary.replace(name, 0);
+                }
         }
 
         /**
          * @return number of different available names
          */
         // class methods
-        static int numberOfNames(){
+        protected static int numberOfNames(){
                 return humanNames.length;
         }
 
@@ -58,7 +68,7 @@ public class Human extends Entity {
                         // name already exists
                         int identifier = nameLibary.get(name) + 1;
                         nameLibary.replace(name, identifier);
-                        return name+" no." + identifier;
+                        return name+" no. " + identifier;
                 }
         }
 

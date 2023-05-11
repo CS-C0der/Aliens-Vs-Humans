@@ -3,6 +3,7 @@ package org.examplegame.entities;
 import org.examplegame.entities.Cat;
 import org.examplegame.Planet;
 import org.examplegame.Weapon;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,11 +21,11 @@ class CatTest {
     }
 
     @Test
-    @DisplayName("Test Constructor of org.examplegame.entities.Cat")
+    @DisplayName("Test Constructor of Cat")
     public void testCat(){
         assertAll(
-                () -> assertEquals("org.examplegame.entities.Cat 1", cat1.getName()),
-                () -> assertEquals("org.examplegame.entities.Cat 2", cat2.getName()),
+                () -> assertEquals("Cat 1", cat1.getName()),
+                () -> assertEquals("Cat 2", cat2.getName()),
                 () -> assertEquals(Planet.EARTH, cat1.getHomePlanet()),
                 () -> assertEquals(100, cat1.getHitpoints()),
                 () -> assertTrue(cat1.isAlive()),
@@ -56,5 +57,10 @@ class CatTest {
             cat2.takeDamage(Integer.MAX_VALUE);
         }
         assertFalse(cat2.isAlive());
+    }
+
+    @AfterEach
+    public void afterEachTest(){
+        Cat.resetCatCount();
     }
 }

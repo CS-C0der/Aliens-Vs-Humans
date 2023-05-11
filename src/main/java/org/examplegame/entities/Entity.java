@@ -11,6 +11,7 @@ public abstract class Entity {
     protected boolean isAlive = true;
     private Weapon weapon;
     private final Planet homePlanet;
+    protected Team team;
 
     // constructor
     public Entity(Planet homePlanet, String name, Weapon weapon) {
@@ -32,6 +33,9 @@ public abstract class Entity {
     }
 
     // getter methods
+    public Team getTeam() {
+        return team;
+    }
     public Planet getHomePlanet(){
         return this.homePlanet;
     };
@@ -69,6 +73,9 @@ public abstract class Entity {
         }
     };
 
+    /**
+     * @return returns damage of equipped weapon
+     */
     public int doDamge(){
         return weapon.getDamage();
     };

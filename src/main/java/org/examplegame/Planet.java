@@ -2,7 +2,7 @@ package org.examplegame;
 
 public enum Planet {
     EARTH,
-    MARS,
+    DELTAQUADRANT,
     MELMAC,
     BLACKMESA,
     KRONOS

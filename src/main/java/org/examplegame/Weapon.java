@@ -15,7 +15,7 @@ public enum Weapon {
     CROWBAR("Crow Bar", 10),
     SHOTGUN("Shotgun", 20);
 
-    static final List<Weapon> weaponsExNONE;
+    static private final List<Weapon> weaponsExNONE;
     static {
         weaponsExNONE = new ArrayList<>(Arrays.asList(Weapon.values()));
         weaponsExNONE.remove(Weapon.NONE);

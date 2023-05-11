@@ -41,6 +41,7 @@ public class Alien extends Entity {
 
         this.setName(race.getName() + " no. " + currentRaceCount);
         this.race = race;
+        this.team = Team.ALIENS;
 
         if (Race.FACEHUGGER == race || Race.ALF == race) {
             this.canUseItem = false;
@@ -101,7 +102,7 @@ public class Alien extends Entity {
     /**
      * Sets the values of raceCount to 0 for every Race
      */
-    static void resetRaceCount(){
+    public static void resetRaceCount(){
         for (Race race : Race.values()){
             Alien.raceCount.replace(race, 0);
         }

@@ -24,7 +24,7 @@ class EntityTest {
     @BeforeEach
     public void beforeEachTest(){
         String name = "Entity1";
-        entity = new ConcreteEntity(Planet.MARS, name, Weapon.SHOTGUN);
+        entity = new ConcreteEntity(Planet.DELTAQUADRANT, name, Weapon.SHOTGUN);
 
     }
 
@@ -32,7 +32,7 @@ class EntityTest {
     @DisplayName("Test Constructor (and getter methods)")
     public void testEntityConstructor(){
         assertAll(
-                () -> assertEquals(Planet.MARS, entity.getHomePlanet()),
+                () -> assertEquals(Planet.DELTAQUADRANT, entity.getHomePlanet()),
                 () -> assertEquals("Entity1", entity.getName()),
                 () -> assertEquals(100, entity.getHitpoints()),
                 () -> assertEquals(true, entity.isAlive()),

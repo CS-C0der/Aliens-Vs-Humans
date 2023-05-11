@@ -24,7 +24,7 @@
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bolditalic" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="245.46484375" x="17.767578125" xml:space="preserve" y="3.0">org.examplegame.entities.Entity<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="abstract" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve">- homePlanet : org.examplegame.Planet
-- name : String  // i.e. "Alien1"
+- name : String  // i.e. "Borg1"
 - hitpoints : int
 - isAlive : boolean
 - weapon : org.examplegame.Weapon
@@ -67,9 +67,9 @@ KRONOS
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve">- static raceCount : Map
 - race : Race
-- eatsCats : boolean
+- doesEatCats : boolean
 - canUseItems : boolean
-- damageUnarmed : int
+
 </y:AttributeLabel>
             <y:MethodLabel xml:space="preserve">+ static int getRaceCount (alien : org.examplegame.entities.Alien)
 + static setRaceCount(alien : org.examplegame.entities.Alien)
@@ -150,7 +150,9 @@ wenn facehugger zuerst angreift macht er mensch zu zombie
 
 Alf macht sofort 100% schaden an katze
 
-facehugger können keine katzen angreifen]]></data>
+facehugger können keine katzen angreifen
+
+wenn borg mensch tötet wird neuer borg erschaffen]]></data>
       <data key="d6">
         <y:UMLNoteNode>
           <y:Geometry height="28.0" width="137.0" x="535.125" y="866.0"/>
@@ -169,19 +171,14 @@ facehugger können keine katzen angreifen]]></data>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="218.13818359375" x="140.930908203125" xml:space="preserve" y="3.0">org.examplegame.Battlefield<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel xml:space="preserve">- initialTeamSize : int
-- initialNumberOfCats : int
-- humansStillAliveCount: int
-- aliansStillAliveCount: int
-- AliensReadyToFight ArrayList&lt;org.examplegame.entities.Entity&gt; // mithilfe von stream füllen?
-- HumansReadyToFight ArrayList&lt;org.examplegame.entities.Entity&gt;
+            <y:AttributeLabel xml:space="preserve">- TeamHumanMembers: int
+- TeamAlienMembers: int
+- AliensReadyToFight ArrayList&lt;Entity&gt; // mithilfe von stream füllen?
+- HumansReadyToFight ArrayList&lt;Entity&gt;
 - fights : List&lt;Threads&gt;
 </y:AttributeLabel>
-            <y:MethodLabel xml:space="preserve">+ &lt;&lt;constructor&gt;&gt; org.examplegame.Battlefield(initialTeamSize : int, initialNumberOfCats : int)
-+ startWar ()
-- randomName(entity org.examplegame.entities.Entity) : String
-- randomWeapon(entity org.examplegame.entities.Entity) : org.examplegame.Weapon
-- fightOf2Characters (entity1 : org.examplegame.entities.Entity, entity2 : org.examplegame.entities.Entity)</y:MethodLabel>
+            <y:MethodLabel xml:space="preserve">+ &lt;&lt;constructor&gt;&gt; Battlefield(initialTeamSize : int, initialNumberOfCats : int)
++ startWar ()</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -207,6 +204,22 @@ NONE
 </y:AttributeLabel>
             <y:MethodLabel xml:space="preserve">&lt;&lt;constructor&gt;&gt; org.examplegame.Weapon(name : String, damage : int)
 getDamage : int</y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="n9">
+      <data key="d4" xml:space="preserve"/>
+      <data key="d6">
+        <y:UMLClassNode>
+          <y:Geometry height="182.78125" width="413.0" x="-556.5" y="796.0"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="233.46142578125" x="89.769287109375" xml:space="preserve" y="3.0">Fight1on1 implements Runable<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
+            <y:AttributeLabel xml:space="preserve">entity1 : Entity
+entity2 : Entity</y:AttributeLabel>
+            <y:MethodLabel xml:space="preserve">fightOf2Entities (entity1 : Entity, entity2 : Entity)</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>

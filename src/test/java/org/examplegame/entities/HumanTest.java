@@ -2,6 +2,7 @@ package org.examplegame.entities;
 
 import org.examplegame.Planet;
 import org.examplegame.Weapon;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -73,6 +74,11 @@ class HumanTest {
         }
 
         return dublicate;
+    }
+
+    @AfterEach
+    public void afterEachTest(){
+        Human.resetNameLibary();
     }
 
     /**

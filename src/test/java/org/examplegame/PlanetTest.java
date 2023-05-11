@@ -13,7 +13,7 @@ class PlanetTest {
     public void planetTest(){
         assertAll(
                 () -> assertNotNull(Planet.EARTH),
-                () -> assertNotNull(Planet.MARS),
+                () -> assertNotNull(Planet.DELTAQUADRANT),
                 () -> assertNotNull(Planet.MELMAC),
                 () -> assertNotNull(Planet.BLACKMESA),
                 () -> assertNotNull(Planet.KRONOS)

@@ -16,9 +16,12 @@ public class Cat extends Entity {
 
         super(Planet.EARTH, "dummy", Weapon.NONE);
         Cat.incrementCatCount();
-        String newName = "org.examplegame.entities.Cat " + Cat.getCatCount();
+        String newName = "Cat " + Cat.getCatCount();
         this.setName(newName);
         this.lives = 9;     // In some countries cats may have only 7 lives
+        // cats are not loyal to humans!
+        // So cats are randomly assigned to Team Human or Team Alien
+        this.team = Team.getRandom();
     }
 
     //class methods
@@ -39,6 +42,8 @@ public class Cat extends Entity {
     public static void incrementCatCount(){
         catCount++;
     }
+
+    public static void resetCatCount(){ Cat.catCount = 0; }
 
     /**
      * Handle how Cats take damage as they have 9 lives.
