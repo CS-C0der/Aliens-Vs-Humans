@@ -6,15 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="add Planet enum and PlanetTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Battlefield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Battlefield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Fight1on1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Fight1on1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Weapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Alien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Alien.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/BattlefieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/BattlefieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/Fight1on1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/Fight1on1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/CatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/CatTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Team.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +39,9 @@
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2OgNIimHZSNJ7fewvKfSz37jbKM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -195,16 +195,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Planet enum and PlanetTest" />
     <option name="LAST_COMMIT_MESSAGE" value="add Planet enum and PlanetTest" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/examplegame/Main.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

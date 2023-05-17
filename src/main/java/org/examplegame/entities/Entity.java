@@ -26,7 +26,7 @@ public abstract class Entity {
     // setter methods
     public void setWeapon(Weapon weapon){
         this.weapon = weapon;
-    };
+    }
 
     public void setName(String name){
         this.name = name;
@@ -38,7 +38,7 @@ public abstract class Entity {
     }
     public Planet getHomePlanet(){
         return this.homePlanet;
-    };
+    }
 
     public String getName(){
         return name;
@@ -46,15 +46,15 @@ public abstract class Entity {
 
     public int getHitpoints(){
         return hitpoints;
-    };
+    }
 
     public boolean isAlive(){
         return isAlive;
-    };
+    }
 
     public Weapon getWeapon(){
         return weapon;
-    };
+    }
 
     /**
      * Reduces hitpoints of entity by the value of "damage".
@@ -71,13 +71,13 @@ public abstract class Entity {
             this.isAlive = false;
             this.hitpoints = 0;
         }
-    };
+    }
 
     /**
-     * @return returns damage of equipped weapon
+     * @return damage of equipped weapon
      */
     public int doDamge(){
         return weapon.getDamage();
-    };
+    }
 
 }

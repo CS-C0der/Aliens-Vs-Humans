@@ -31,6 +31,9 @@ public class Main {
 
     }
 
+    /**
+     * @return number of Team Members as specified by user Input from Console
+     */
     private static int getTeamMemberCountFromInput(){
         Scanner userInput = new Scanner(System.in);
         boolean invalidInput = true;
@@ -54,6 +57,9 @@ public class Main {
         return teamMemberCount;
     }
 
+    /**
+     * @return number of Cats as specified by user Input from Console
+     */
     private static int getCatCountFromInput(){
         Scanner userInput = new Scanner(System.in);
         boolean invalidInput = true;

@@ -44,6 +44,9 @@ public class Cat extends Entity {
         catCount++;
     }
 
+    /**
+     * Reset catCount to 0
+     */
     public static void resetCatCount(){ Cat.catCount = 0; }
 
     /**

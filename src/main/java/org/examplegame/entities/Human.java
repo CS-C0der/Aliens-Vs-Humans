@@ -2,7 +2,6 @@ package org.examplegame.entities;
 
 import org.examplegame.Planet;
 import org.examplegame.Weapon;
-import org.examplegame.entities.Entity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,7 +50,7 @@ public class Human extends Entity {
 
         /**
          * Return a Random Human Name.
-         *
+         * <p>
          * If Name is already in Name Libary add an identifier to the name: Paul no. 2
          *
          * @return random Name

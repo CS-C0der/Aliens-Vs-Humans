@@ -1,9 +1,7 @@
 package org.examplegame.entities;
 
-import org.examplegame.Planet;
 import org.examplegame.Race;
 import org.examplegame.Weapon;
-import org.examplegame.entities.Entity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +9,7 @@ import java.util.Map;
 public class Alien extends Entity {
 
     // instance variables
-    private boolean doesEatCats;
+    private final boolean doesEatCats;
     private boolean canUseItem;
     private Race race;
 
@@ -24,10 +22,6 @@ public class Alien extends Entity {
             raceCount.put(race, 0);
         }
     }
-
-    // ToDo: name of alien should be race + racecount
-    //  - a zombi can only mutate from facehugger
-    //  - mutate: waffe von mensch übernehmen
 
     // constructor
     public Alien(Race race){
@@ -76,12 +70,13 @@ public class Alien extends Entity {
         return race;
     }
 
+    // instance methods
+
     /**
      * If Facehugger defeats Human: Facehugger + human become one unit/entity and mutate to a zombie
-     * see: https://half-life.fandom.com/wiki/Headcrab
+     * see: <a href="https://half-life.fandom.com/wiki/Headcrab">...</a>
      * @param human : zombie adopts weapon of human defeated by the Facehugger
      */
-    // instance methods
     public void mutate(Human human) throws RuntimeException{
 
         if (! (Race.FACEHUGGER.equals(this.race) ) ){
