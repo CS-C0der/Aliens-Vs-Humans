@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class Fight1on1Test {
 
-    final ExecutorService threadPool = Executors.newFixedThreadPool(10);
+    final ExecutorService threadPool = Executors.newCachedThreadPool();
 
     @BeforeEach
     public void beforeEachTest(){
@@ -23,14 +23,12 @@ class Fight1on1Test {
     @DisplayName("Test fight1on1")
     public void testRun(){
         // x facehugger mensch würfeln test ob beide mal gewinnen. (mensch wird zu Zombie wird von Battlefield gemanaget - weil eh geprüft wird wer gewinnt)
-        // facehugger cat -> katze gewinnt, weil facehugger katze nicht infizieren kann
-        // zombie mensch
-        // alf mensch
-        // alf katze
-        // borg mensch
-        // borg katze : gibt es borg katzen? warum nicht?
-        // klingon mensch
-        // mensch katze -> funktionieren 9 leben?
+        // x facehugger cat -> katze gewinnt, weil facehugger katze nicht infizieren kann
+        // x alf mensch -> alf verliert
+        // x alf katze -> alf gewinnt
+        // (borg mensch) -> brauch man nicht. regulärer figth (mensch wird zu borg wird von battlefield gemanaget)
+        // xklingon mensch
+        // xmensch katze -> funktionieren 9 leben?
 
     }
 
@@ -45,9 +43,9 @@ class Fight1on1Test {
             // create new Task (Fight)
             Fight1on1 fight = new Fight1on1(new Alien(Race.FACEHUGGER), new Human());
             // start task and store return value
-            Future<Entity> winner = threadPool.submit(fight);
+            Future<WinnerAndLoser> winnerAndLoser = threadPool.submit(fight);
             try {
-                if (winner.get() instanceof Alien){
+                if (winnerAndLoser.get().getWinner() instanceof Alien){
                     facehuggerWins++;
                 } else {
                     humanWins++;
@@ -68,12 +66,54 @@ class Fight1on1Test {
     public void testFacehuggerCat(){
         Fight1on1 fight = new Fight1on1(new Alien(Race.FACEHUGGER), new Cat());
         // start task and store return value
-        Future<Entity> winner = threadPool.submit(fight);
+        Future<WinnerAndLoser> winnerAndLoser = threadPool.submit(fight);
         try {
-            assertTrue(winner.get() instanceof Cat, "Winner should be Cat!");
+            assertTrue(winnerAndLoser.get().getWinner() instanceof Cat, "Winner should be Cat!");
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    @DisplayName("Test Fight Alf Cat")
+    public void testAlfCat(){
+        Fight1on1 fight = new Fight1on1(new Alien(Race.ALF), new Cat());
+        // start task and store return value
+        Future<WinnerAndLoser> winnerAndLoser = threadPool.submit(fight);
+        try {
+            assertTrue(winnerAndLoser.get().getWinner() instanceof Alien, "Winner should be Alf!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    @DisplayName("Test Fight Alf Human")
+    public void testAlfHuman(){
+        Fight1on1 fight = new Fight1on1(new Alien(Race.ALF), new Human());
+        // start task and store return value
+        Future<WinnerAndLoser> winnerAndLoser = threadPool.submit(fight);
+        try {
+            assertTrue(winnerAndLoser.get().getWinner() instanceof Human, "Winner should be Human!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    @DisplayName("Test Regular Fight")
+    public void testRegularFight(){
+        Fight1on1 fight = new Fight1on1(new Alien(Race.BORG), new Cat());
+        // start task and store return value
+        Future<WinnerAndLoser> winnerAndLoser = threadPool.submit(fight);
+
+        try {
+            Entity winner = winnerAndLoser.get().getWinner();
+            System.out.println("Winner is: " + winner.getName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @AfterEach

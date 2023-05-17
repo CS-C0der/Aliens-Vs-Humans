@@ -48,7 +48,7 @@ public class Alien extends Entity {
             this.setWeapon(Weapon.NONE);
         } else {
             this.canUseItem = true;
-            this.setWeapon(Weapon.getRandom());
+            this.setWeapon(Weapon.PHASER);
         }
 
         if (Race.ALF == race){
@@ -89,14 +89,14 @@ public class Alien extends Entity {
         }
         this.race = Race.ZOMBIE;
         // adopts weapon from human
+        this.canUseItem = true;
         this.setWeapon(human.getWeapon());
-
-        // ToDO test if still makes sense
-        human.takeDamage(Integer.MAX_VALUE);
 
         // adjust numbers in RaceCount
         Alien.raceCount.replace(Race.FACEHUGGER, Alien.raceCount.get(Race.FACEHUGGER) -1);
         Alien.raceCount.replace(Race.ZOMBIE, Alien.raceCount.get(Race.ZOMBIE) +1);
+
+        this.setName(race.getName() + " no. " + Alien.raceCount.get(Race.ZOMBIE));
     }
 
     /**

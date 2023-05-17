@@ -41,8 +41,7 @@ class CatTest {
         cat1.takeDamage(20);
         assertEquals(hpBefore-20, cat1.getHitpoints());
 
-        // cat should only lose 1 live when HP 0, or below
-        // and still be alive
+        // cat should only lose 1 live when HP 0, or below and still be alive
         cat1.takeDamage(Integer.MAX_VALUE);
         assertTrue(cat1.isAlive());
         assertEquals(8, cat1.getLives());
@@ -57,6 +56,12 @@ class CatTest {
             cat2.takeDamage(Integer.MAX_VALUE);
         }
         assertFalse(cat2.isAlive());
+    }
+    
+    @Test
+    @DisplayName("Test if printing of losing lives works")
+    public void testLosingLives(){
+        cat1.takeDamage(Integer.MAX_VALUE);
     }
 
     @AfterEach

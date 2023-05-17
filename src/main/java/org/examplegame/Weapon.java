@@ -9,11 +9,11 @@ import java.util.Random;
  * Enumeration of Weapons. Each org.examplegame.Weapon has a name and a value representing the damage is does.
  */
 public enum Weapon {
-    PHASER("Phaser", 15),
-    PLASMACANNON("Plasma Cannon", 34),
-    NONE("bare Hands", 5),
+    PHASER("Phaser", 50),
+    PLASMACANNON("Plasma Cannon", 67),
+    NONE("no Weapon", 6),
     CROWBAR("Crow Bar", 10),
-    SHOTGUN("Shotgun", 20);
+    SHOTGUN("Shotgun", 15);
 
     static private final List<Weapon> weaponsExNONE;
     static {

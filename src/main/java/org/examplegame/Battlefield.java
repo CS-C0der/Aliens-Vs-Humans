@@ -5,6 +5,7 @@ import org.examplegame.entities.*;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Battlefield {
 
@@ -22,7 +23,16 @@ public class Battlefield {
     ArrayList<Entity> humansReadyToFight = new ArrayList<>();
     ArrayList<Entity> aliensReadyToFight = new ArrayList<>();
 
-    // constructor
+    // constructors
+
+    /**
+     * Generates a Battlefield with equal number of Humans/Aliens.
+     * Plus Adds a number of cats to the battle, which are randomly assigned to a team
+     *
+     * @param initialTeamSize number of team members of each Team
+     * @param initialNumberOfCats number of cats assigned to the battlefield
+     * @throws RuntimeException throws Exception if one of parameters = 0
+     */
     public Battlefield(int initialTeamSize, int initialNumberOfCats) throws RuntimeException {
         if (initialTeamSize <= 0  || initialNumberOfCats < 0){
             throw new RuntimeException("Bad Arguments for Battlefield constructor");
@@ -48,6 +58,38 @@ public class Battlefield {
         }
     }
 
+    /**
+     * Generates a Battlefield with specified amount of Entities
+     * @param humans created on Battlefield
+     * @param catsTeamHuman created on Battlefield
+     * @param catsTeamAlien created on Battlefield
+     * @param aliens created on Battlefield
+     * @param race Race of Aliens created on Battlefield (if aliens=0 this is irrelevant)
+     */
+    public Battlefield(int humans, int catsTeamHuman, int catsTeamAlien, int aliens, Race race){
+
+        for (int i = 0 ; i < humans; i++){
+            humansReadyToFight.add(new Human());
+            teamHumanMembers.increment();
+        }
+
+        for (int i = 0 ; i < catsTeamHuman; i++){
+            humansReadyToFight.add(new Cat());
+            teamHumanMembers.increment();
+        }
+
+        for (int i = 0 ; i < catsTeamAlien; i++){
+            aliensReadyToFight.add(new Cat());
+            teamAlienMembers.increment();
+        }
+
+        for (int i = 0 ; i < aliens; i++){
+            aliensReadyToFight.add(new Alien(race));
+            teamAlienMembers.increment();
+        }
+
+    }
+
     // getter methods
     public int getTeamHumanMembers() {
         return teamHumanMembers.getValue();
@@ -71,54 +113,118 @@ public class Battlefield {
      * @return the Winner Team of the War
      */
     public Team startWar(){
-        final ExecutorService threadPool = Executors.newFixedThreadPool(10);
-        CompletionService<Entity> completionService = new ExecutorCompletionService<>(threadPool);
+        final ExecutorService threadPool = Executors.newCachedThreadPool();
+        CompletionService<WinnerAndLoser> completionService = new ExecutorCompletionService<>(threadPool);
+        ReentrantLock lock = new ReentrantLock();
+
+        // print Teams at Beginning of War
+        System.out.println("War Aliens vs. Humans starts!");
+        printTeams();
 
         // start several fights so that every TeamMember is in a fight
         int fightsAtStart = Math.min(humansReadyToFight.size() , aliensReadyToFight.size() );
         for (int i=0; i < fightsAtStart; i++) {
-            // ToDo nicht nullten nehmen sondern random. weil katzen zum schlusshinzugefügt werden kämpfen sonst nur katzen gegen katzen
-            Entity entityTeamHuman = humansReadyToFight.remove(0);
-            Entity entityTeamAlien = aliensReadyToFight.remove(0);
+            Random random = new Random();
+            // pick random element of entity ready to fight
+            // otherwise cats always fight cats because they are always added to the list at the end
+            Entity entityTeamHuman = humansReadyToFight.remove(random.nextInt(0, humansReadyToFight.size()));
+            Entity entityTeamAlien = aliensReadyToFight.remove(random.nextInt(0, aliensReadyToFight.size()));
             startFight(entityTeamAlien, entityTeamHuman, completionService);
         }
 
-        // as soon as a fight/thread is finished start a new one!
+        // as soon as a fight/thread is finished process results and start a new one!
         while (true) {
 
             try{
                 // get (first) result from completionService queue
-                Future<Entity> future = completionService.take();   // take() waits until there is a result in the queue
-                Entity winner = future.get();
+                Future<WinnerAndLoser> future = completionService.take();   // take() waits until there is a result in the queue
+                Entity winner = future.get().getWinner();
+                Entity loser = future.get().getLoser();
 
                 // process result
                 if (winner.getTeam().equals(Team.ALIENS)){
                     teamHumanMembers.decrement();   // 1 member of team human defeated
+
+                    // special cases: facehugger and borg
+                    if (winner instanceof Alien){   // remember: could also be cat...
+                        Alien alienWinner = (Alien) winner;
+                        if ( ((Alien) winner).getRace().equals(Race.FACEHUGGER)){
+                            // acquire lock to make sure Result and current Score are always printed directly after each other!
+                            // otherwise output can be confusing
+                            lock.lock();
+                            try {
+                                printResult(future.get());
+                                ((Alien) winner).mutate((Human)loser);       // loser can't be cat because facehuggers never wins against cats
+                                printCurrentScore();
+                            } finally {
+                                lock.unlock();
+                            }
+                        } else if (alienWinner.getRace().equals(Race.BORG)){
+                            lock.lock();
+                            try {
+                                printResult(future.get());
+                                // human respawns as new borg. cats can't become borg
+                                if (! (loser instanceof Cat)){
+                                    teamAlienMembers.increment();
+                                    aliensReadyToFight.add(new Alien(Race.BORG));
+                                }
+                                printCurrentScore();
+                            } finally {
+                                lock.unlock();
+                            }
+                        } else {
+                            // team alien but not borg or facehugger
+                            lock.lock();
+                            try {
+                                printResult(future.get());
+                                printCurrentScore();
+                            } finally {
+                                lock.unlock();
+                            }
+                        }
+                    } else {
+                        // Cat (Team Alien) wins
+                        lock.lock();
+                        try {
+                            printResult(future.get());
+                            printCurrentScore();
+                        } finally {
+                            lock.unlock();
+                        }
+                    }
                     aliensReadyToFight.add(winner); // winner is ready to fight again!
                 } else {
-                    teamAlienMembers.decrement();
+                    // winner is team human
+                    lock.lock();
+                    try {
+                        printResult(future.get());
+                        teamAlienMembers.decrement();
+                        printCurrentScore();
+                    } finally {
+                        lock.unlock();
+                    }
                     humansReadyToFight.add(winner);
                 }
-                System.out.println(winner.getName() + " wins fight!");
+
+                // break condition
+                if (0 == teamHumanMembers.getValue() ){
+                    System.out.println("Team Alien Wins!!\n");
+                    return Team.ALIENS;
+                } else if (0 == teamAlienMembers.getValue()){
+                    System.out.println("Team Human Wins!!\n");
+                    return Team.HUMANS;
+                }
+
+                // start new fight (if at least one member of opposing team is ready to fight)
+                if (humansReadyToFight.size() > 0 && aliensReadyToFight.size() > 0){
+                    startFight(humansReadyToFight.remove(0) , aliensReadyToFight.remove(0), completionService);
+                } else {
+                    System.out.println(winner.getName() + " can't start new fight. All opponents are busy in fights");
+                }
 
             } catch (Exception e){
                 e.printStackTrace();
             }
-
-            // break condition
-            if (0 == teamHumanMembers.getValue() ){
-                System.out.println("Team Alien Wins!!");
-                return Team.ALIENS;
-            } else if (0 == teamAlienMembers.getValue()){
-                System.out.println("Team Human Wins!!");
-                return Team.HUMANS;
-            }
-
-            // start new fight (if at least one member of opposing team is ready to fight)
-            if (humansReadyToFight.size() > 0 && aliensReadyToFight.size() > 0){
-                startFight(humansReadyToFight.remove(0) , aliensReadyToFight.remove(0), completionService);
-            }
-
         }
     }
 
@@ -128,27 +234,80 @@ public class Battlefield {
      * @param entity2
      * @param completionService
      */
-    private void startFight(Entity entity1, Entity entity2, CompletionService<Entity> completionService){
+    private void startFight(Entity entity1, Entity entity2, CompletionService<WinnerAndLoser> completionService){
+        System.out.println(entity1.getName() + " starts to fight against " + entity2.getName());
         Fight1on1 fight = new Fight1on1(entity1 , entity2);
         // start task (results are stored in queue of completionService)
         completionService.submit(fight);
-        System.out.println(entity1.getName() + " starts to fight against " + entity2.getName());
+    }
+
+    /**
+     * Prints result of the fight to Console
+     * @param winnerAndLoser
+     */
+    private void printResult(WinnerAndLoser winnerAndLoser){
+        Entity winner = winnerAndLoser.getWinner();
+        Entity loser = winnerAndLoser.getLoser();
+
+        if (winner instanceof Alien){
+            // downcast to Alien to access getRace()
+            Alien alien = (Alien) winner;
+
+            switch (alien.getRace()){
+                case FACEHUGGER -> {
+                    System.out.print(alien.getName() + " defeats " + loser.getName() + " -");
+                    System.out.println(" They mutate to a Zombie");
+                }
+                case BORG -> {
+                    // only humans respawn as borg. cats cannot become borg
+                    if (! (loser instanceof Cat)){
+                        System.out.print(alien.getName() + " defeats " + loser.getName() + ". ");
+                        System.out.println(loser.getName() + " respawns as a new Borg");
+                    } else {
+                        printResultDefault(alien, loser);
+                    }
+                }
+                case ALF -> {
+                    if (loser instanceof Cat){
+                        System.out.println(alien.getName() + " eats " + loser.getName());
+                    } else {
+                        printResultDefault(alien, loser);
+                    }
+                }
+                default -> printResultDefault(alien, loser);
+            }
+        } else if (winner instanceof Human){
+            printResultDefault(winner, loser);
+        } else {
+            // winner is cat
+            System.out.println(winner.getName() + " kills " + loser.getName() + " with its claws");
+        }
+    }
+
+    private void printResultDefault(Entity winnerEntity, Entity loserEntity){
+        System.out.println(winnerEntity.getName() + " kills " + loserEntity.getName() + " with " + winnerEntity.getWeapon().getName());
+    }
+
+    /**
+     * Prints to console how many Aliens/Humans are still alive
+     */
+    public void printCurrentScore(){
+        System.out.println("Fighters Team Alien still alive: " + teamAlienMembers.getValue() + " - Fighters Team Human still alive: " + teamHumanMembers.getValue() );
     }
 
     public void printTeams(){
-        System.out.println("");
         System.out.println("Size of Team Alien: " + teamAlienMembers.getValue());
-        System.out.println("aliensReadyToFight:");
-        aliensReadyToFight.forEach(o -> System.out.println(o.getName()));
+        System.out.print("Aliens ready to fight: ");
+        aliensReadyToFight.forEach(o -> System.out.print(o.getName() + ", "));
+        System.out.print("\n");
 
         System.out.println("Size of Team Human: " + teamHumanMembers.getValue());
-        System.out.println("humansReadyToFight:");
-        humansReadyToFight.forEach(o -> System.out.println(o.getName()));
-        System.out.println("");
+        System.out.print("Humans ready to fight: ");
+        humansReadyToFight.forEach(o -> System.out.print(o.getName()+ ", ") );
+        System.out.print("\n");
     }
 
 
-    // ToDO : TeamHumanMembers u. TeamAlienMembers muss von Battlefield verwaltet werden, weil in beiden auch Katzen enthalten sind
     // https://www.baeldung.com/java-executor-wait-for-threads
     // ExecutorService executor = Executors.newFixedThreadPool(20) // threads do a lot of waiting during fight -> makes sense to have more threads than cpus/cores!
     // executerCompletionService

@@ -16,12 +16,13 @@ public class Cat extends Entity {
 
         super(Planet.EARTH, "dummy", Weapon.NONE);
         Cat.incrementCatCount();
-        String newName = "Cat " + Cat.getCatCount();
-        this.setName(newName);
-        this.lives = 9;     // In some countries cats may have only 7 lives
         // cats are not loyal to humans!
         // So cats are randomly assigned to Team Human or Team Alien
         this.team = Team.getRandom();
+        String newName = "Cat " + Cat.getCatCount() + " (Team " + this.team + ")";
+        this.setName(newName);
+        this.lives = 9;     // In some countries cats may have only 7 lives
+
     }
 
     //class methods
@@ -54,6 +55,7 @@ public class Cat extends Entity {
      */
     @Override
     public void takeDamage(int damage){
+        // toDO maybe double damage or more to make more balanced?
         this.hitpoints -= damage;
         if (this.hitpoints <= 0) {
             if (this.lives <= 1){
@@ -64,6 +66,7 @@ public class Cat extends Entity {
                 // next life with 100 HP
                 this.lives--;
                 this.hitpoints = 100;
+                // System.out.println(this.getName() + " lost one life. Still " + this.lives + " remaining!");
             }
 
         }

@@ -19,11 +19,12 @@ class BattlefieldTest {
 
     @BeforeEach
     public void beforeEachTest(){
+        Helper.resetStaticVariables();
         int numberOfCats = 3;
         int teamSize = 5;
 
         for (int i=0; i < 50; i++){
-            battlefields.add(new Battlefield(5,7));
+            battlefields.add(new Battlefield(2,2));
             Helper.resetStaticVariables();
         }
 
@@ -52,6 +53,31 @@ class BattlefieldTest {
     public void testStartWar(){
         for (int i = 0; i < 5; i++){
             battlefields.get(i).startWar();
+        }
+    }
+
+    // ToDo
+    //  -test facehugger human
+    //  -test borg human
+    //  (-test borg cat (cat always wins against borg)
+    //  -
+    @Test
+    @DisplayName("Test Fight Facehugger vs. Human")
+    public void testFacehuggerHuman(){
+        for (int i = 0; i < 5; i++){
+            // create Battlefield with 2 humans and 2 Facehuggers
+            Battlefield battlefield = new Battlefield(2, 0, 0, 2, Race.FACEHUGGER);
+            battlefield.startWar();
+        }
+    }
+
+    @Test
+    @DisplayName("Test Fight Borg vs. Human")
+    public void testBorgHuman(){
+        for (int i = 0; i < 5; i++){
+            // create Battlefield with 2 humans and 2 Borgs
+            Battlefield battlefield = new Battlefield(2, 0, 0, 2, Race.BORG);
+            battlefield.startWar();
         }
     }
 

@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="add Planet enum and PlanetTest">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/TeamMemberCount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/classDiagram.graphml" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/classDiagram.graphml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Battlefield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Battlefield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Fight1on1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Fight1on1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Planet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Planet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Weapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Alien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Alien.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/PlanetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/PlanetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/BattlefieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/BattlefieldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/Fight1on1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/Fight1on1Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/CatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/CatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/EntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/EntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/HumanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/HumanTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,8 +74,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BattlefieldTest.testStartWar">
-    <configuration name="BattlefieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.examplegame.Main" />
       <module name="Aliens-Vs-Humans" />
       <extension name="coverage">
         <pattern>
@@ -89,14 +84,11 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.examplegame" />
-      <option name="MAIN_CLASS_NAME" value="org.examplegame.BattlefieldTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BattlefieldTest.testBattlefield" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BattlefieldTest.testBorgHuman" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Aliens-Vs-Humans" />
       <extension name="coverage">
         <pattern>
@@ -106,7 +98,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.examplegame" />
       <option name="MAIN_CLASS_NAME" value="org.examplegame.BattlefieldTest" />
-      <option name="METHOD_NAME" value="testBattlefield" />
+      <option name="METHOD_NAME" value="testBorgHuman" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BattlefieldTest.testFacehuggerHuman" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Aliens-Vs-Humans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.examplegame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.examplegame" />
+      <option name="MAIN_CLASS_NAME" value="org.examplegame.BattlefieldTest" />
+      <option name="METHOD_NAME" value="testFacehuggerHuman" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,7 +136,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Fight1on1Test.testFacehuggerCat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Fight1on1Test.testRegularFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Aliens-Vs-Humans" />
       <extension name="coverage">
         <pattern>
@@ -138,23 +146,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.examplegame" />
       <option name="MAIN_CLASS_NAME" value="org.examplegame.Fight1on1Test" />
-      <option name="METHOD_NAME" value="testFacehuggerCat" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Fight1on1Test.testFacehuggerHuman" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Aliens-Vs-Humans" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.examplegame.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.examplegame" />
-      <option name="MAIN_CLASS_NAME" value="org.examplegame.Fight1on1Test" />
-      <option name="METHOD_NAME" value="testFacehuggerHuman" />
+      <option name="METHOD_NAME" value="testRegularFight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -162,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BattlefieldTest.testStartWar" />
-        <item itemvalue="JUnit.BattlefieldTest.testBattlefield" />
-        <item itemvalue="JUnit.Fight1on1Test.testFacehuggerCat" />
-        <item itemvalue="JUnit.Fight1on1Test.testFacehuggerHuman" />
-        <item itemvalue="JUnit.BattlefieldTest" />
+        <item itemvalue="JUnit.BattlefieldTest.testBorgHuman" />
+        <item itemvalue="JUnit.BattlefieldTest.testFacehuggerHuman" />
+        <item itemvalue="JUnit.Fight1on1Test.testRegularFight" />
       </list>
     </recent_temporary>
   </component>
@@ -203,5 +195,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Planet enum and PlanetTest" />
     <option name="LAST_COMMIT_MESSAGE" value="add Planet enum and PlanetTest" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/examplegame/Main.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
