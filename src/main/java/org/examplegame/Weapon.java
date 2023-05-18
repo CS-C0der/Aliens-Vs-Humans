@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Enumeration of Weapons. Each org.examplegame.Weapon has a name and a value representing the damage is does.
+ * Enumeration of Weapons. Each Weapon has a name and a value representing the damage is does.
  */
 public enum Weapon {
     PHASER("Phaser", 50),
@@ -37,15 +37,19 @@ public enum Weapon {
         return name;
     }
 
+    /**
+     * @return a list of all Weapons (except for "NONE"!)
+     */
     public static List<Weapon> getWeaponsExNONE(){
         return weaponsExNONE;
     }
 
+    /**
+     * @return a random Weapon (but not "NONE"!)
+     */
     public static Weapon getRandom() {
         Random random = new Random();
 
         return weaponsExNONE.get(random.nextInt(weaponsExNONE.size()));
     }
-
-
 }

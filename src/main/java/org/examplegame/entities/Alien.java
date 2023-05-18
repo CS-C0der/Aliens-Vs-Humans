@@ -6,6 +6,12 @@ import org.examplegame.Weapon;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Describes an Alien Entity.
+ * Specifies whether an Alien can use Items(Weapons) or eats cats.
+ * Aliens may have different Races (see Race Enum)
+ * Facehuggers can mutate to a Zombie. Aliens are named after their race (Borg no.1, Borg no2., ...)
+ */
 public class Alien extends Entity {
 
     // instance variables
@@ -13,7 +19,7 @@ public class Alien extends Entity {
     private boolean canUseItem;
     private Race race;
 
-    // Map to store count per Race for naming Borg no1, Borg no2 etc.
+    // Map to store count per Race for naming reasons (Borg no1, Borg no2 etc.)
     private static Map<Race, Integer> raceCount = new HashMap<>();
 
     static{
@@ -53,6 +59,12 @@ public class Alien extends Entity {
     }
 
     // class methods
+
+    /**
+     *
+     * @param race specify the race for which the race count should be returned
+     * @return the number of existing Aliens of the specified Race
+     */
     public static int getRaceCount(Race race){
         return Alien.raceCount.get(race);
     }

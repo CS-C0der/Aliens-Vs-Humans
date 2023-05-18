@@ -3,6 +3,11 @@ package org.examplegame.entities;
 import org.examplegame.Planet;
 import org.examplegame.Weapon;
 
+/**
+ * Describes a Cat entity. Cats have 9 lives:
+ * If HP(Hitpoints) gets below zero cats lose one live and start
+ * the next life with 100 HP. Cat names are: Cat 1, Cat 2, Cat 3, ...
+ */
 public class Cat extends Entity {
 
     // class variables
@@ -58,7 +63,6 @@ public class Cat extends Entity {
      */
     @Override
     public void takeDamage(int damage){
-        // toDO maybe double damage or more to make more balanced?
         this.hitpoints -= damage;
         if (this.hitpoints <= 0) {
             if (this.lives <= 1){

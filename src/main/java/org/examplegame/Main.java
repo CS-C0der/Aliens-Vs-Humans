@@ -3,7 +3,6 @@ package org.examplegame;
 
 import java.util.Scanner;
 
-// ToDO refactor no static variables
 public class Main {
     public static void main(String[] args) {
 

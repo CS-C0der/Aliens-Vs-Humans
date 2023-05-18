@@ -21,8 +21,6 @@ class AlienTest {
     @BeforeEach
     public void beforeEachTest(){
         // solange neue aliens erschaffen, bis jede rasse einmal da!
-        //ToDO in alienconstructor verschiedene methoden aufrufen für verschiedene rassen?
-        // methoden protected
 
         facehugger1 = new Alien(Race.FACEHUGGER);
         facehugger2 = new Alien(Race.FACEHUGGER);

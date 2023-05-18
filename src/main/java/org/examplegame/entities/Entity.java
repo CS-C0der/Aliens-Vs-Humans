@@ -3,6 +3,10 @@ package org.examplegame.entities;
 import org.examplegame.Planet;
 import org.examplegame.Weapon;
 
+/**
+ * Describes a general Entity. Entities have a name, hitpoints, a weapon, a Home Planet.
+ * Each Entity also belongs to a Team and knows if it is alive.
+ */
 public abstract class Entity {
 
     // Instance variables

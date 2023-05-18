@@ -7,6 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * Describes a human Entity.
+ * Humans have armor. First the armor is reduced. When the armor is 0 the Hitpoints are reduced.
+ * Humans have real names. If a name doubles the human is named Werner no. 2 i.e.
+ */
 public class Human extends Entity {
 
         // class variables

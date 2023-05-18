@@ -2,6 +2,9 @@ package org.examplegame;
 
 import org.examplegame.entities.Entity;
 
+/**
+ * Wraps winner and loser into a single object. Needed because some methods must return winner AND loser entity
+ */
 public class WinnerAndLoser {
     private Entity winner;
     private Entity loser;

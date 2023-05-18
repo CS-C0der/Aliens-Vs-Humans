@@ -24,8 +24,6 @@ class RaceTest {
 
     @Test
     public void testRandomRace(){
-        // ToDo refactor: Alien hat methode getRaceCount!!
-
 
         // generate many random aliens
         for (int i = 0; i < 50; i++){

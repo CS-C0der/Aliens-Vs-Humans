@@ -7,19 +7,27 @@ import java.util.Random;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Represents the battlefield for the war. Battlefield class creates new Entities and manages who fights against whom.
+ * It also handles the output and determines the winner of the war.
+ */
 public class Battlefield {
 
     /*
      * Rules for fighting:
-     *      - if Facehuggers attack first: Human becomes Zombie
+     *      - if Facehuggers attack first: Human+Facehugger become a Zombie
      *      - if Human attacks first: human kills facehugger
-     *      - Alf eats cats: cat loses 1 live per Attack
+     *      - Alf eats cats: Alf always wins against cat
      *      - when borg defeats human: human becomes new borg entity
      */
 
     // instance variables
+
+    // variables that remembers how many members of a Team are still alive
     private TeamMemberCount teamHumanMembers = new TeamMemberCount();
     private TeamMemberCount teamAlienMembers = new TeamMemberCount();
+
+    // variables that remembers who many entities are ready for a fight (aren't in a fight right now).
     ArrayList<Entity> humansReadyToFight = new ArrayList<>();
     ArrayList<Entity> aliensReadyToFight = new ArrayList<>();
 
@@ -31,7 +39,7 @@ public class Battlefield {
      *
      * @param initialTeamSize number of team members of each Team
      * @param initialNumberOfCats number of cats assigned to the battlefield
-     * @throws RuntimeException throws Exception if one of parameters = 0
+     * @throws RuntimeException throws Exception if teamsize < 1 or number of cats < 0
      */
     public Battlefield(int initialTeamSize, int initialNumberOfCats) throws RuntimeException {
         if (initialTeamSize <= 0  || initialNumberOfCats < 0){
@@ -59,7 +67,7 @@ public class Battlefield {
     }
 
     /**
-     * Generates a Battlefield with specified amount of Entities
+     * Generates a Battlefield with specified amount of Entities.
      * @param humans created on Battlefield
      * @param catsTeamHuman created on Battlefield
      * @param catsTeamAlien created on Battlefield
@@ -91,18 +99,32 @@ public class Battlefield {
     }
 
     // getter methods
+
+    /**
+     * @return number of team members of team Human still alive
+     */
     public int getTeamHumanMembers() {
         return teamHumanMembers.getValue();
     }
 
+
+    /**
+     * @return number of Entities in Team Human who are ready to fight
+     */
     public int getReadyHumansCount() {
         return humansReadyToFight.size();
     }
 
+    /**
+     * @return number of team members of team Alien still alive
+     */
     public int getTeamAlienMembers() {
         return teamAlienMembers.getValue();
     }
 
+    /**
+     * @return number of Entities in Team Alien who are ready to fight
+     */
     public int getReadyAliensCount() {
         return aliensReadyToFight.size();
     }
@@ -110,9 +132,10 @@ public class Battlefield {
     // instance methods
 
     /**
-     * @return the Winner Team of the War
+     * Starts the war. Number of Teammembers and Number of Cats is already set in the constructor.
+     * Start several fights, so that all Entities are in a fight (if size of Teams is equal)
      */
-    public Team startWar(){
+    public void startWar(){
         final ExecutorService threadPool = Executors.newCachedThreadPool();
         CompletionService<WinnerAndLoser> completionService = new ExecutorCompletionService<>(threadPool);
         ReentrantLock lock = new ReentrantLock();
@@ -133,6 +156,8 @@ public class Battlefield {
         }
 
         // as soon as a fight/thread is finished process results and start a new one!
+        // this is accomplished by completionService.take(). take() waits until there is a result in the
+        // queue of completion service and takes the first element of the queue
         while (true) {
 
             try{
@@ -173,7 +198,7 @@ public class Battlefield {
                                 lock.unlock();
                             }
                         } else {
-                            // team alien but not borg or facehugger
+                            // team alien but not borg or facehugger or cat
                             lock.lock();
                             try {
                                 printResult(future.get());
@@ -209,10 +234,10 @@ public class Battlefield {
                 // break condition
                 if (0 == teamHumanMembers.getValue() ){
                     System.out.println("Team Alien Wins!!\n");
-                    return Team.ALIENS;
+                    break;
                 } else if (0 == teamAlienMembers.getValue()){
                     System.out.println("Team Human Wins!!\n");
-                    return Team.HUMANS;
+                    break;
                 }
 
                 // start new fight (if at least one member of opposing team is ready to fight)
@@ -230,9 +255,9 @@ public class Battlefield {
 
     /**
      * Creates new fight(thread) and submits it to completionService
-     * @param entity1
-     * @param entity2
-     * @param completionService
+     * @param entity1 can be Team Human or Team Alien. Fight1on1 class takes care
+     * @param entity2 can be Team Human or Team Alien. Fight1on1 class takes care
+     * @param completionService stores the results of the tasks in a queue in the order of the completion of the task
      */
     private void startFight(Entity entity1, Entity entity2, CompletionService<WinnerAndLoser> completionService){
         System.out.println(entity1.getName() + " starts to fight against " + entity2.getName());
@@ -243,7 +268,7 @@ public class Battlefield {
 
     /**
      * Prints result of the fight to Console
-     * @param winnerAndLoser
+     * @param winnerAndLoser contains the winner and the loser entity as an object reference
      */
     private void printResult(WinnerAndLoser winnerAndLoser){
         Entity winner = winnerAndLoser.getWinner();
@@ -306,12 +331,4 @@ public class Battlefield {
         humansReadyToFight.forEach(o -> System.out.print(o.getName()+ ", ") );
         System.out.print("\n");
     }
-
-
-    // https://www.baeldung.com/java-executor-wait-for-threads
-    // ExecutorService executor = Executors.newFixedThreadPool(20) // threads do a lot of waiting during fight -> makes sense to have more threads than cpus/cores!
-    // executerCompletionService
-    // oder auch Buch S.984
-
-    //
 }

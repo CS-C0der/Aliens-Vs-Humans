@@ -7,10 +7,16 @@ public class TeamMemberCount {
         this.value = 0;
     }
 
+    /**
+     * increment teamMemberCount by 1
+     */
     public void increment(){
         this.value++;
     }
 
+    /**
+     * decrement teamMemberCount by 1
+     */
     public void decrement(){
         this.value--;
     }

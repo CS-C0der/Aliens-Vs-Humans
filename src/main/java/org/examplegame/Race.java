@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * possible Races of Aliens. Note: Human is not defined as a race in this game
+ * Each Race has a name and a home planet which is automatically assigned on creation
+ */
 public enum Race {
     FACEHUGGER("Facehugger", Planet.BLACKMESA),
     ZOMBIE("Zombie", Planet.BLACKMESA),
@@ -12,8 +16,8 @@ public enum Race {
     BORG("Borg", Planet.DELTAQUADRANT),
     ALF("Alf", Planet.MELMAC);
 
-    private String name;
-    private Planet homePlanet;
+    private final String name;
+    private final Planet homePlanet;
     static private final List<Race> RacesExZombie;
     static {
         RacesExZombie = new ArrayList<>(Arrays.asList(Race.values()));
@@ -33,6 +37,10 @@ public enum Race {
     }
 
     // getter methods
+
+    /**
+     * @return a list of all Races excluding Zombies. (There are no Zombies at the start of a war)
+     */
     public static List<Race> getRacesExZombie(){
         return Race.RacesExZombie;
     }
