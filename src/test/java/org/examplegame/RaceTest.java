@@ -3,10 +3,6 @@ package org.examplegame;
 import org.examplegame.entities.Alien;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.IntStream;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class RaceTest {

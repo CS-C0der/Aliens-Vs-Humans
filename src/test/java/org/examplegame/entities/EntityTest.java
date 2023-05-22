@@ -1,6 +1,5 @@
 package org.examplegame.entities;
 
-import org.examplegame.entities.Entity;
 import org.examplegame.Planet;
 import org.examplegame.Weapon;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,13 +10,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EntityTest {
 
-    // Create concrete class that extends org.examplegame.entities.Entity in order to test i.e. constructor
+    // Create concrete class that extends Entity in order to test i.e. constructor
     public class ConcreteEntity extends Entity {
         public ConcreteEntity(Planet homePlanet, String name, Weapon weapon) {
             super(homePlanet, name, weapon);
         }
 
-    };
+    }
 
     private ConcreteEntity entity;
 
@@ -50,10 +49,6 @@ class EntityTest {
         assertEquals(Weapon.PHASER.getName(), entity.getWeapon().getName());
     }
 
-    // ToDo: test for takeDamage (can be implemented in org.examplegame.entities.Entity and later overwritten in org.examplegame.entities.Human and cat)
-    //  - override bei Katzen (lives)
-    //  - override org.examplegame.entities.Human (armor)
-
     @Test
     public void testTakeDamage(){
         // check if hitpoints reduce
@@ -68,11 +63,11 @@ class EntityTest {
 
     @Test
     public void testDoDamage(){
-        // remember: @BeforeEach sets org.examplegame.Weapon to shotgun (damage 20)
-        assertEquals(20,entity.doDamge() );
+        // remember: @BeforeEach sets Weapon to shotgun
+        assertEquals(entity.getWeapon().getDamage() , entity.doDamge() );
         entity.setWeapon(Weapon.CROWBAR);
         // different result with crowbar?
-        assertEquals(10,entity.doDamge() );
+        assertEquals(entity.getWeapon().getDamage() , entity.doDamge() );
     }
 
 }

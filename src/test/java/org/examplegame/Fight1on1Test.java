@@ -1,13 +1,11 @@
 package org.examplegame;
-
 import org.examplegame.entities.*;
 import org.junit.jupiter.api.*;
 
 import java.util.concurrent.*;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class Fight1on1Test {
 
@@ -15,21 +13,7 @@ class Fight1on1Test {
 
     @BeforeEach
     public void beforeEachTest(){
-
         Helper.resetStaticVariables();
-    }
-
-    @Test
-    @DisplayName("Test fight1on1")
-    public void testRun(){
-        // x facehugger mensch würfeln test ob beide mal gewinnen. (mensch wird zu Zombie wird von Battlefield gemanaget - weil eh geprüft wird wer gewinnt)
-        // x facehugger cat -> katze gewinnt, weil facehugger katze nicht infizieren kann
-        // x alf mensch -> alf verliert
-        // x alf katze -> alf gewinnt
-        // (borg mensch) -> brauch man nicht. regulärer figth (mensch wird zu borg wird von battlefield gemanaget)
-        // xklingon mensch
-        // xmensch katze -> funktionieren 9 leben?
-
     }
 
     @Test

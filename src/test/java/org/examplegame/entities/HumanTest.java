@@ -1,5 +1,6 @@
 package org.examplegame.entities;
 
+import org.examplegame.Helper;
 import org.examplegame.Planet;
 import org.examplegame.Weapon;
 import org.junit.jupiter.api.AfterEach;
@@ -18,6 +19,7 @@ class HumanTest {
 
     @BeforeEach
     public void beforeEachTest(){
+        Helper.resetStaticVariables();
         int numberOfNames = Human.numberOfNames();
 
         // create one more human than names available to check for double names
@@ -78,7 +80,7 @@ class HumanTest {
 
     @AfterEach
     public void afterEachTest(){
-        Human.resetNameLibary();
+        Helper.resetStaticVariables();
     }
 
     /**

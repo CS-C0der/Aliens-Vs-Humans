@@ -19,19 +19,19 @@ class WeaponTest {
             () -> assertEquals("Plasma Cannon", Weapon.PLASMACANNON.getName()),
             () -> assertEquals("Crow Bar", Weapon.CROWBAR.getName()),
             () -> assertEquals("Shotgun", Weapon.SHOTGUN.getName()),
-            () -> assertEquals("bare Hands", Weapon.NONE.getName())
+            () -> assertEquals("no Weapon", Weapon.NONE.getName())
         );
     }
 
     @Test
-    @DisplayName("Test org.examplegame.Weapon Damage")
+    @DisplayName("Test oWeapon Damage")
     public void testWeaponDamage(){
         assertAll(
-            () -> assertEquals(15, Weapon.PHASER.getDamage()),
-            () -> assertEquals(34, Weapon.PLASMACANNON.getDamage()),
+            () -> assertEquals(50, Weapon.PHASER.getDamage()),
+            () -> assertEquals(67, Weapon.PLASMACANNON.getDamage()),
             () -> assertEquals(10, Weapon.CROWBAR.getDamage()),
-            () -> assertEquals(20, Weapon.SHOTGUN.getDamage()),
-            () -> assertEquals(5, Weapon.NONE.getDamage())
+            () -> assertEquals(15, Weapon.SHOTGUN.getDamage()),
+            () -> assertEquals(6, Weapon.NONE.getDamage())
         );
     }
 

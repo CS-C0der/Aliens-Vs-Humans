@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlanetTest {
 
     @Test
-    @DisplayName("all org.examplegame.Planet Constants exist")
+    @DisplayName("all Planet Constants exist")
     public void planetTest(){
         assertAll(
                 () -> assertNotNull(Planet.EARTH),

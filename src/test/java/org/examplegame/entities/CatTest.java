@@ -1,6 +1,6 @@
 package org.examplegame.entities;
 
-import org.examplegame.entities.Cat;
+import org.examplegame.Helper;
 import org.examplegame.Planet;
 import org.examplegame.Weapon;
 import org.junit.jupiter.api.AfterEach;
@@ -16,6 +16,8 @@ class CatTest {
 
     @BeforeEach
     void beforeEachTest () {
+        Helper.resetStaticVariables();
+
         cat1 = new Cat();
         cat2 = new Cat();
     }
@@ -24,8 +26,8 @@ class CatTest {
     @DisplayName("Test Constructor of Cat")
     public void testCat(){
         assertAll(
-                () -> assertEquals("Cat 1", cat1.getName()),
-                () -> assertEquals("Cat 2", cat2.getName()),
+                () -> assertEquals("Cat 1 (Team " + cat1.getTeam() +")" , cat1.getName()),
+                () -> assertEquals("Cat 2 (Team " + cat2.getTeam() +")", cat2.getName()),
                 () -> assertEquals(Planet.EARTH, cat1.getHomePlanet()),
                 () -> assertEquals(100, cat1.getHitpoints()),
                 () -> assertTrue(cat1.isAlive()),
@@ -50,8 +52,7 @@ class CatTest {
         assertEquals(100, cat1.getHitpoints());
 
         // check if cat dies when all lives are gone.
-        // for loop because per Design there
-        // should not be a setter method for lives
+        // for loop because per Design there should not be a setter method for lives
         for (int i = 1; i <=9; i++){
             cat2.takeDamage(Integer.MAX_VALUE);
         }
@@ -66,6 +67,6 @@ class CatTest {
 
     @AfterEach
     public void afterEachTest(){
-        Cat.resetCatCount();
+        Helper.resetStaticVariables();
     }
 }

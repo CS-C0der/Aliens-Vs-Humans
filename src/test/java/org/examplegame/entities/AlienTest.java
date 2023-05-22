@@ -1,5 +1,6 @@
 package org.examplegame.entities;
 
+import org.examplegame.Helper;
 import org.examplegame.Planet;
 import org.examplegame.Race;
 import org.examplegame.Weapon;
@@ -7,9 +8,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,7 +18,7 @@ class AlienTest {
 
     @BeforeEach
     public void beforeEachTest(){
-        // solange neue aliens erschaffen, bis jede rasse einmal da!
+        Helper.resetStaticVariables();
 
         facehugger1 = new Alien(Race.FACEHUGGER);
         facehugger2 = new Alien(Race.FACEHUGGER);
@@ -62,14 +60,14 @@ class AlienTest {
                 // check if raceCount is set properly (3 facehuggers created, 1 mutated to zombie)
                 () -> assertEquals(2, Alien.getRaceCount(Race.FACEHUGGER), "RaceCount of Facehugger"),
                 // check if name is set properly
-                () -> assertEquals("Facehugger no. 2", facehugger2.getName())
+                () -> assertEquals("Zombie no. 2", facehugger2.getName())
 
         );
     }
 
     @AfterEach
     public void afterEachTest(){
-        Alien.resetRaceCount();
+        Helper.resetStaticVariables();
         System.out.println("RaceCount Map afterEachTest: ");
         for (Race race : Race.values()){
             System.out.println("Number of " + race + "s: " + Alien.getRaceCount(race));

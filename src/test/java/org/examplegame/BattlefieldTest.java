@@ -1,8 +1,5 @@
 package org.examplegame;
 
-import org.examplegame.entities.Alien;
-import org.examplegame.entities.Cat;
-import org.examplegame.entities.Human;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -36,7 +33,7 @@ class BattlefieldTest {
     @Test
     @DisplayName("Tests consructor of battlefield")
     public void testBattlefield(){
-        battlefields.forEach(o -> o.printTeams());
+        // battlefields.forEach(o -> o.printTeams());
         assertAll(
                 () -> assertEquals(5, battlefieldExCats.getTeamHumanMembers(), "Human Team Members at Start"),
                 () -> assertEquals(5, battlefieldExCats.getTeamAlienMembers(), "Alien Team Members at Start"),
@@ -56,11 +53,6 @@ class BattlefieldTest {
         }
     }
 
-    // ToDo
-    //  -test facehugger human
-    //  -test borg human
-    //  (-test borg cat (cat always wins against borg)
-    //  -
     @Test
     @DisplayName("Test Fight Facehugger vs. Human")
     public void testFacehuggerHuman(){
@@ -84,7 +76,6 @@ class BattlefieldTest {
     @AfterEach
     public void afterEachTest(){
         Helper.resetStaticVariables();
-
     }
 
 }

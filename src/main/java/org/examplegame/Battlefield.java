@@ -316,7 +316,7 @@ public class Battlefield {
     /**
      * Prints to console how many Aliens/Humans are still alive
      */
-    public void printCurrentScore(){
+    private void printCurrentScore(){
         System.out.println("Fighters Team Alien still alive: " + teamAlienMembers + " - Fighters Team Human still alive: " + teamHumanMembers );
     }
 
