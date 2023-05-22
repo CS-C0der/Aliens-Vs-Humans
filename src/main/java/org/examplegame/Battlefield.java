@@ -24,8 +24,8 @@ public class Battlefield {
     // instance variables
 
     // variables that remembers how many members of a Team are still alive
-    private TeamMemberCount teamHumanMembers = new TeamMemberCount();
-    private TeamMemberCount teamAlienMembers = new TeamMemberCount();
+    private int teamHumanMembers = 0;
+    private int teamAlienMembers = 0;
 
     // variables that remembers who many entities are ready for a fight (aren't in a fight right now).
     ArrayList<Entity> humansReadyToFight = new ArrayList<>();
@@ -48,20 +48,20 @@ public class Battlefield {
 
         for (int i = 0; i < initialTeamSize; i++){
             humansReadyToFight.add(new Human());
-            teamHumanMembers.increment();
+            teamHumanMembers++;
 
             aliensReadyToFight.add(new Alien(Race.randomRace()));
-            teamAlienMembers.increment();
+            teamAlienMembers++;
         }
 
         for (int i = 0; i < initialNumberOfCats; i++){
             Cat cat = new Cat();
             if ( cat.getTeam().equals(Team.HUMANS)){
                 humansReadyToFight.add(cat);
-                teamHumanMembers.increment();
+                teamHumanMembers++;
             } else {
                 aliensReadyToFight.add(cat);
-                teamAlienMembers.increment();
+                teamAlienMembers++;
             }
         }
     }
@@ -78,22 +78,22 @@ public class Battlefield {
 
         for (int i = 0 ; i < humans; i++){
             humansReadyToFight.add(new Human());
-            teamHumanMembers.increment();
+            teamHumanMembers++;
         }
 
         for (int i = 0 ; i < catsTeamHuman; i++){
             humansReadyToFight.add(new Cat());
-            teamHumanMembers.increment();
+            teamHumanMembers++;
         }
 
         for (int i = 0 ; i < catsTeamAlien; i++){
             aliensReadyToFight.add(new Cat());
-            teamAlienMembers.increment();
+            teamAlienMembers++;
         }
 
         for (int i = 0 ; i < aliens; i++){
             aliensReadyToFight.add(new Alien(race));
-            teamAlienMembers.increment();
+            teamAlienMembers++;
         }
 
     }
@@ -104,7 +104,7 @@ public class Battlefield {
      * @return number of team members of team Human still alive
      */
     public int getTeamHumanMembers() {
-        return teamHumanMembers.getValue();
+        return teamHumanMembers;
     }
 
 
@@ -119,7 +119,7 @@ public class Battlefield {
      * @return number of team members of team Alien still alive
      */
     public int getTeamAlienMembers() {
-        return teamAlienMembers.getValue();
+        return teamAlienMembers;
     }
 
     /**
@@ -168,7 +168,7 @@ public class Battlefield {
 
                 // process result
                 if (winner.getTeam().equals(Team.ALIENS)){
-                    teamHumanMembers.decrement();   // 1 member of team human defeated
+                    teamHumanMembers--;   // 1 member of team human defeated
 
                     // special cases: facehugger and borg
                     if (winner instanceof Alien){   // remember: could also be cat...
@@ -190,7 +190,7 @@ public class Battlefield {
                                 printResult(future.get());
                                 // human respawns as new borg. cats can't become borg
                                 if (! (loser instanceof Cat)){
-                                    teamAlienMembers.increment();
+                                    teamAlienMembers++;
                                     aliensReadyToFight.add(new Alien(Race.BORG));
                                 }
                                 printCurrentScore();
@@ -223,7 +223,7 @@ public class Battlefield {
                     lock.lock();
                     try {
                         printResult(future.get());
-                        teamAlienMembers.decrement();
+                        teamAlienMembers--;
                         printCurrentScore();
                     } finally {
                         lock.unlock();
@@ -232,10 +232,10 @@ public class Battlefield {
                 }
 
                 // break condition
-                if (0 == teamHumanMembers.getValue() ){
+                if (0 == teamHumanMembers ){
                     System.out.println("Team Alien Wins!!\n");
                     break;
-                } else if (0 == teamAlienMembers.getValue()){
+                } else if (0 == teamAlienMembers){
                     System.out.println("Team Human Wins!!\n");
                     break;
                 }
@@ -317,16 +317,16 @@ public class Battlefield {
      * Prints to console how many Aliens/Humans are still alive
      */
     public void printCurrentScore(){
-        System.out.println("Fighters Team Alien still alive: " + teamAlienMembers.getValue() + " - Fighters Team Human still alive: " + teamHumanMembers.getValue() );
+        System.out.println("Fighters Team Alien still alive: " + teamAlienMembers + " - Fighters Team Human still alive: " + teamHumanMembers );
     }
 
     public void printTeams(){
-        System.out.println("Size of Team Alien: " + teamAlienMembers.getValue());
+        System.out.println("Size of Team Alien: " + teamAlienMembers);
         System.out.print("Aliens ready to fight: ");
         aliensReadyToFight.forEach(o -> System.out.print(o.getName() + ", "));
         System.out.print("\n");
 
-        System.out.println("Size of Team Human: " + teamHumanMembers.getValue());
+        System.out.println("Size of Team Human: " + teamHumanMembers);
         System.out.print("Humans ready to fight: ");
         humansReadyToFight.forEach(o -> System.out.print(o.getName()+ ", ") );
         System.out.print("\n");

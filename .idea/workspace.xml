@@ -7,20 +7,6 @@
     <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="add Planet enum and PlanetTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Battlefield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Battlefield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Fight1on1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Fight1on1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Planet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Planet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Race.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/TeamMemberCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/TeamMemberCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/WinnerAndLoser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/WinnerAndLoser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Alien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Alien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/RaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/RaceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/AlienTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/examplegame/entities/AlienTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
