@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="add Planet enum and PlanetTest">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/classDiagram.graphml" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/classDiagram.graphml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/Battlefield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/Battlefield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/examplegame/entities/Human.java" afterDir="false" />
-    </list>
+    <list default="true" id="b3711081-43ea-463d-b4e6-5f6b7149e902" name="Changes" comment="add Planet enum and PlanetTest" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
