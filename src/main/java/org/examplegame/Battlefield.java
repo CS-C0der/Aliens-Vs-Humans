@@ -320,6 +320,9 @@ public class Battlefield {
         System.out.println("Fighters Team Alien still alive: " + teamAlienMembers + " - Fighters Team Human still alive: " + teamHumanMembers );
     }
 
+    /**
+     * Prints Size of teams and member of each team to console
+     */
     public void printTeams(){
         System.out.println("Size of Team Alien: " + teamAlienMembers);
         System.out.print("Aliens ready to fight: ");

@@ -49,7 +49,7 @@ public class Human extends Entity {
          * @return number of different available names
          */
         // class methods
-        protected static int numberOfNames(){
+        static int numberOfNames(){
                 return humanNames.length;
         }
 

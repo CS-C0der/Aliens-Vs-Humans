@@ -18,19 +18,21 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="201.0" width="281.0" x="85.0" y="142.0"/>
+          <y:Geometry height="201.0" width="488.0" x="18.0" y="134.78125"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bolditalic" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="245.46484375" x="17.767578125" xml:space="preserve" y="3.0">org.examplegame.entities.Entity<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bolditalic" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="47.494140625" x="220.2529296875" xml:space="preserve" y="3.0">Entity<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="abstract" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel xml:space="preserve">- homePlanet : org.examplegame.Planet
-- name : String  // i.e. "Borg1"
-- hitpoints : int
-- isAlive : boolean
-- weapon : org.examplegame.Weapon
+            <y:AttributeLabel xml:space="preserve">- homePlanet : Planet
+- name : String
+# hitpoints : int
+# isAlive : boolean
+- weapon : Weapon
+# team : Team
 </y:AttributeLabel>
-            <y:MethodLabel xml:space="preserve">+ doDamage
-+ takeDamage</y:MethodLabel>
+            <y:MethodLabel xml:space="preserve">+ &lt;&lt;create&gt;&gt; Entity(homePlanet : Planet, name : String, weapon : Weapon)
++ doDamage() : int
++ takeDamage(damage : int)</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -39,11 +41,11 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="152.0" width="231.0" x="474.0" y="142.0"/>
+          <y:Geometry height="152.0" width="231.0" x="573.0" y="222.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="34.265625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="188.107421875" x="21.4462890625" xml:space="preserve" y="3.0">&lt;&lt;enumeration&gt;&gt;
-org.examplegame.Planet<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="34.265625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="141.2998046875" x="44.85009765625" xml:space="preserve" y="3.0">&lt;&lt;enumeration&gt;&gt;
+Planet<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve">EARTH
 MARS
@@ -60,20 +62,20 @@ KRONOS
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="172.5" width="258.88512110726646" x="-233.0" y="453.5"/>
+          <y:Geometry height="172.5" width="258.88512110726646" x="-228.19256055363323" y="502.5"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="239.015625" x="9.934748053633228" xml:space="preserve" y="3.0">org.examplegame.entities.Alien<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="41.044921875" x="108.92009961613323" xml:space="preserve" y="3.0">Alien<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel xml:space="preserve">- static raceCount : Map
+            <y:AttributeLabel xml:space="preserve">- raceCount : Map &lt;&lt;static&gt;&gt;
 - race : Race
 - doesEatCats : boolean
 - canUseItems : boolean
 
 </y:AttributeLabel>
-            <y:MethodLabel xml:space="preserve">+ static int getRaceCount (alien : org.examplegame.entities.Alien)
-+ static setRaceCount(alien : org.examplegame.entities.Alien)
-+ mutate (alien : Race)</y:MethodLabel>
+            <y:MethodLabel xml:space="preserve">+ &lt;&lt;create&gt;&gt; Alien(race : Race)
++  resetRaceCount ()  &lt;&lt;static&gt;&gt; 
++ mutate (human : Human)</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -82,14 +84,20 @@ KRONOS
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="136.0" width="281.0" x="115.0" y="477.0"/>
+          <y:Geometry height="181.5" width="314.0" x="115.0" y="484.75"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="253.6787109375" x="13.66064453125" xml:space="preserve" y="3.0">org.examplegame.entities.Human<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="55.7080078125" x="129.14599609375" xml:space="preserve" y="3.0">Human<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel xml:space="preserve">- static nameLibary : Map 
-- armor : int </y:AttributeLabel>
-            <y:MethodLabel xml:space="preserve"/>
+            <y:AttributeLabel xml:space="preserve">- nameLibary : Map&lt;String, int&gt;  &lt;&lt;static&gt;&gt; 
+- humanNames : String[]  &lt;&lt;static&gt;&gt;
+- armor : int 
+</y:AttributeLabel>
+            <y:MethodLabel xml:space="preserve">+ &lt;&lt;create&gt;&gt; Human()
++ resetNameLibary  &lt;&lt;static&gt;&gt;
+ numberOfNames : int &lt;&lt;static&gt;&gt;
+- getRandomName() : String &lt;&lt;static&gt;&gt;
++ takeDamage(damage :int) &lt;&lt;override&gt;&gt;</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -98,10 +106,10 @@ KRONOS
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="184.0" width="281.0" x="-593.5" y="442.0"/>
+          <y:Geometry height="233.0" width="314.0" x="-626.5" y="442.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="34.265625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="141.2998046875" x="69.85009765625" xml:space="preserve" y="3.0">&lt;&lt;enumeration&gt;&gt;
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="34.265625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="141.2998046875" x="86.35009765625" xml:space="preserve" y="3.0">&lt;&lt;enumeration&gt;&gt;
 Race<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve">FACEHUGGER
@@ -109,8 +117,11 @@ ZOMBIE
 KLINGON
 BORG
 ALF
-</y:AttributeLabel>
-            <y:MethodLabel xml:space="preserve"/>
+
+- name : String
+- homePlanet : Planet</y:AttributeLabel>
+            <y:MethodLabel xml:space="preserve">&lt;&lt;create&gt;&gt; Race(name:String, planet:Planet)
++ getRandom() : Race</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -119,71 +130,53 @@ ALF
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="105.0" width="246.0" x="490.125" y="492.5"/>
+          <y:Geometry height="166.0" width="281.0" x="490.125" y="492.5"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="226.498046875" x="9.7509765625" xml:space="preserve" y="3.0">org.examplegame.entities.Cat<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.52734375" x="126.236328125" xml:space="preserve" y="3.0">Cat<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel xml:space="preserve">- lifes : int
+            <y:AttributeLabel xml:space="preserve"> static catCount : int
+- lifes : int
 </y:AttributeLabel>
-            <y:MethodLabel xml:space="preserve"/>
+            <y:MethodLabel xml:space="preserve">+ &lt;&lt;create&gt;&gt; Cat()
++ getCatCount() : int  &lt;&lt;static&gt;&gt;
++ incrementCatCount()  &lt;&lt;static&gt;&gt;
++ resetCatCount()  &lt;&lt;static&gt;&gt;
++ getLives : int
++ takeDamage(damage :int)  &lt;&lt;override&gt;&gt;
+</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
     </node>
     <node id="n6">
       <data key="d4" xml:space="preserve"/>
-      <data key="d5" xml:space="preserve"><![CDATA[teamAliens und teamHumans (generische listen - können katzen und menschen / aliens enthalten)
-
-erzeuge random liste mit humans (es können katzen enthalten sein)
-
-erzeuge random liste mit aliens AUẞER zombies (es können katzen enthalten sein)
-
-erzeuge liste mit katzen (feste anzahl)
-katzen sind keine loyalen haustiere. katzen werden random auf team 1 oder 2 verteilt.
-
-lass beide gegeneinander kämpfen
-
-Environment:
-random wer zuerst angreift.
-wenn facehugger zuerst angreift macht er mensch zu zombie
-
-Alf macht sofort 100% schaden an katze
-
-facehugger können keine katzen angreifen
-
-wenn borg mensch tötet wird neuer borg erschaffen]]></data>
-      <data key="d6">
-        <y:UMLNoteNode>
-          <y:Geometry height="28.0" width="137.0" x="535.125" y="866.0"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="113.107421875" x="11.9462890625" xml:space="preserve" y="5.015625">Environment Note<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
-        </y:UMLNoteNode>
-      </data>
-    </node>
-    <node id="n7">
-      <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="220.78125" width="500.0" x="-19.5" y="796.0"/>
+          <y:Geometry height="252.03125" width="704.0625" x="-68.98124999999982" y="841.71875"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="218.13818359375" x="140.930908203125" xml:space="preserve" y="3.0">org.examplegame.Battlefield<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="81.0732421875" x="311.49462890625" xml:space="preserve" y="3.0">Battlefield<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel xml:space="preserve">- TeamHumanMembers: int
-- TeamAlienMembers: int
-- AliensReadyToFight ArrayList&lt;Entity&gt; // mithilfe von stream füllen?
-- HumansReadyToFight ArrayList&lt;Entity&gt;
+            <y:AttributeLabel xml:space="preserve">- teamHumanMembers: int
+- teamAlienMembers: int
+- aliensReadyToFight ArrayList&lt;Entity&gt;
+- humansReadyToFight ArrayList&lt;Entity&gt;
 - fights : List&lt;Threads&gt;
 </y:AttributeLabel>
-            <y:MethodLabel xml:space="preserve">+ &lt;&lt;constructor&gt;&gt; Battlefield(initialTeamSize : int, initialNumberOfCats : int)
-+ startWar ()</y:MethodLabel>
+            <y:MethodLabel xml:space="preserve">+ &lt;&lt;create&gt;&gt; Battlefield(initialTeamSize : int, initialNumberOfCats : int)
++ &lt;&lt;create&gt;&gt; Battlefield(humans : int, catsTeamHumans : int, catsTeamAliens : int, aliens : int, race : Race)
++ startWar ()
+- startFight(entity1: Entity, entity2: Entity, completionService : CompletionService&lt;WinnerAndLoser&gt; )
+- printResults(winnerAndLoser : WinnerAndLoser)
+- printResultDefault(winnerEntity : Entity, loserEntity : Entity)
+- printCurrentScore()
++ printTeams()</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
     </node>
-    <node id="n8">
+    <node id="n7">
       <data key="d4" xml:space="preserve"/>
       <data key="d5" xml:space="preserve"><![CDATA[test]]></data>
       <data key="d6">
@@ -191,7 +184,7 @@ wenn borg mensch tötet wird neuer borg erschaffen]]></data>
           <y:Geometry height="220.78125" width="383.0" x="-487.875" y="115.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="200.4853515625" x="91.25732421875" xml:space="preserve" y="25.96875">org.examplegame.Weapon<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="63.42041015625" x="159.789794921875" xml:space="preserve" y="25.96875">Weapon<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="enumeration" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve">PHASER
 PLASMACANNON
@@ -202,8 +195,26 @@ NONE
 - name : String
 - damage : int
 </y:AttributeLabel>
-            <y:MethodLabel xml:space="preserve">&lt;&lt;constructor&gt;&gt; org.examplegame.Weapon(name : String, damage : int)
-getDamage : int</y:MethodLabel>
+            <y:MethodLabel xml:space="preserve">&lt;&lt;create&gt;&gt; Weapon(name : String, damage : int)
++ getRandom() : Weapon</y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="n8">
+      <data key="d4" xml:space="preserve"/>
+      <data key="d6">
+        <y:UMLClassNode>
+          <y:Geometry height="182.78125" width="533.7687500000002" x="-692.75" y="852.65625"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="230.33203125" x="151.7183593750001" xml:space="preserve" y="3.0">Fight1on1 implements callable<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
+            <y:AttributeLabel xml:space="preserve">entityTeamHuman : Entity
+entityTeamAlien : Entity</y:AttributeLabel>
+            <y:MethodLabel xml:space="preserve">&lt;&lt;create&gt;&gt; Fight1on1 (entity1 : Entity, entity2 : Entity)
++ call() : WinnerAndLoser
+- regularFight(entityTeamHuman : Entity, entityTeamAlien : Entity) :WinnerAndLoser</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -212,14 +223,48 @@ getDamage : int</y:MethodLabel>
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="182.78125" width="413.0" x="-556.5" y="796.0"/>
+          <y:Geometry height="139.25" width="217.5" x="702.1906250000002" y="777.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="233.46142578125" x="89.769287109375" xml:space="preserve" y="3.0">Fight1on1 implements Runable<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="34.265625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="141.2998046875" x="38.10009765625" xml:space="preserve" y="3.0">&lt;&lt;enumeration&gt;&gt;
+Team<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel xml:space="preserve">entity1 : Entity
-entity2 : Entity</y:AttributeLabel>
-            <y:MethodLabel xml:space="preserve">fightOf2Entities (entity1 : Entity, entity2 : Entity)</y:MethodLabel>
+            <y:AttributeLabel xml:space="preserve">ALIENS
+HUMANS</y:AttributeLabel>
+            <y:MethodLabel xml:space="preserve">+ getRandom() : Team</y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="n10">
+      <data key="d4" xml:space="preserve"/>
+      <data key="d6">
+        <y:UMLClassNode>
+          <y:Geometry height="111.984375" width="394.921875" x="-623.3265624999999" y="1135.4237026618664"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="125.33544921875" x="134.793212890625" xml:space="preserve" y="3.0">WinnerAndLoser<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
+            <y:AttributeLabel xml:space="preserve">- winner : Entity
+- loser : Entity</y:AttributeLabel>
+            <y:MethodLabel xml:space="preserve">&lt;&lt;create&gt;&gt; WinnerAndLoser(winner:Entity, loser:Entity)</y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="n11">
+      <data key="d4" xml:space="preserve"/>
+      <data key="d6">
+        <y:UMLClassNode>
+          <y:Geometry height="111.984375" width="394.921875" x="85.58906250000018" y="1227.2205776618664"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="39.419921875" x="177.7509765625" xml:space="preserve" y="3.0">Main<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
+            <y:AttributeLabel xml:space="preserve"/>
+            <y:MethodLabel xml:space="preserve">+ main(args : String[])  &lt;&lt;static&gt;&gt;
+- getTeamMemberCountFromInput() : int &lt;&lt;static&gt;&gt;
+- getCatCountFromInput() : int &lt;&lt;static&gt;&gt;</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -254,27 +299,7 @@ entity2 : Entity</y:AttributeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e3" source="n0" target="n8">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="-94.88311688311686" sy="49.5" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
-          <y:Arrows source="none" target="plain"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e4" source="n0" target="n1">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="91.0" sy="-39.5" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
-          <y:Arrows source="none" target="plain"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e5" source="n2" target="n4">
+    <edge id="e3" source="n2" target="n4">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-123.75428593872847" sy="-45.20689655172415" tx="0.0" ty="0.0"/>
@@ -284,7 +309,19 @@ entity2 : Entity</y:AttributeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e6" source="n7" target="n2">
+    <edge id="e4" source="n6" target="n8">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="diamond" target="none"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e5" source="n6" target="n2">
+      <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -294,7 +331,8 @@ entity2 : Entity</y:AttributeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e7" source="n7" target="n3">
+    <edge id="e6" source="n6" target="n3">
+      <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -304,12 +342,139 @@ entity2 : Entity</y:AttributeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e8" source="n7" target="n5">
+    <edge id="e7" source="n6" target="n5">
+      <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="white_diamond" target="none"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e8" source="n0" target="n7">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="white_diamond" target="none"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e9" source="n11" target="n6">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="diamond" target="none"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e10" source="n2" target="n9">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-98.75" y="727.5487026618664"/>
+            <y:Point x="773.8312500000002" y="727.5487026618664"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_diamond"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n3" target="n9">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="310.98561226985" y="696.2987026618664"/>
+            <y:Point x="793.40748726985" y="696.2987026618664"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_diamond"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n5" target="n9">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="834.42311226985" y="661.1424526618664"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_diamond"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e13" source="n5" target="n1">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_diamond"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e14" source="n3" target="n1">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="359.81373726985" y="446.2987026618664"/>
+            <y:Point x="630.625" y="446.2987026618664"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_diamond"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e15" source="n2" target="n1">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-9.32688773015002" y="401.3768276618664"/>
+            <y:Point x="602.00123726985" y="401.3768276618664"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_diamond"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e16" source="n8" target="n10">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+          <y:Arrows source="none" target="plain"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e17" source="n6" target="n10">
+      <data key="d8" xml:space="preserve"/>
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+          <y:Arrows source="none" target="plain"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
