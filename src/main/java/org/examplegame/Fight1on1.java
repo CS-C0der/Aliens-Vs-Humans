@@ -113,13 +113,13 @@ public class Fight1on1 implements Callable<WinnerAndLoser> {
             // fight until one entity is dead
             while (true){
                 // Human attacks
-                entityTeamAlien.takeDamage(entityTeamHuman.doDamge());
+                entityTeamAlien.takeDamage(entityTeamHuman.doDamage());
                 if (!entityTeamAlien.isAlive()){
                     break;
                 }
 
                 // Alien attacks
-                entityTeamHuman.takeDamage(entityTeamAlien.doDamge());
+                entityTeamHuman.takeDamage(entityTeamAlien.doDamage());
                 if (!entityTeamHuman.isAlive()) {
                     break;
                 }

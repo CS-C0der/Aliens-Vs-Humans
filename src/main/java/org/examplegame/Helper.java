@@ -19,7 +19,7 @@ public final class Helper {
      */
     public static void resetStaticVariables(){
         Alien.resetRaceCount();
-        Human.resetNameLibary();
+        Human.resetCombatantsList();
         Cat.resetCatCount();
     }
 }

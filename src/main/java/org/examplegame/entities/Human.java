@@ -15,13 +15,14 @@ import java.util.Random;
 public class Human extends Entity {
 
         // class variables
-        // ToDo get Names out of a CSV file
-        static private final String[] humanNames = {"Werner", "Dieter", "Hans-Peter", "Otto", "Alfred", "Heinz", "Paul", "Klaus", "Frank" };
-        static private Map<String, Integer> nameLibary = new HashMap<>();
+        // ToDo get names out of a CSV file
+        static private final String[] humanNames = {"Werner", "Dieter", "Hans-Peter", "Otto", "Alfred", "Heinz", "Paul", "Klaus", "Frank",
+                                                        "Anita", "Brigitte", "Cordula", "Daniela", "Erika", "Florentine", "Gundula", "Heike", "Isolde"};
+        static private Map<String, Integer> combatantsList = new HashMap<>();
         static{
-                // initialize nameLibary with values = 0 for each name
+                // initialize combatantsList with values = 0 for each name. 0 means they don't fight
                 for (String name : humanNames){
-                        nameLibary.put(name, 0);
+                        combatantsList.put(name, 0);
                 }
         }
 
@@ -37,11 +38,11 @@ public class Human extends Entity {
         }
 
         /**
-         * Sets the values of nameLibary to 0 for every Name
+         * Sets the values of combatantsList to 0 for every Name
          */
-        public static void resetNameLibary(){
+        public static void resetCombatantsList(){
                 for (String name : humanNames){
-                        nameLibary.replace(name, 0);
+                        combatantsList.replace(name, 0);
                 }
         }
 
@@ -54,9 +55,9 @@ public class Human extends Entity {
         }
 
         /**
-         * Return a Random Human Name.
+         * Return a random human name.
          * <p>
-         * If Name is already in Name Libary add an identifier to the name: Paul no. 2
+         * If name is already active in combatantsList, choose a different name.
          *
          * @return random Name
          */
@@ -65,14 +66,12 @@ public class Human extends Entity {
                 String name;
                 name = humanNames[random.nextInt(humanNames.length)];
                 // check if name already exists
-                if ( 0 == nameLibary.get(name)) {
-                        nameLibary.replace(name, 1);
+                if ( 0 == combatantsList.get(name)) {
+                        combatantsList.replace(name, 1); //turn "active" on combatantsList by setting their value to 1
                         return name;
                 } else {
-                        // name already exists
-                        int identifier = nameLibary.get(name) + 1;
-                        nameLibary.replace(name, identifier);
-                        return name+" no. " + identifier;
+                        // person already enlisted, so choose someone else
+                        return getRandomName();
                 }
         }
 
@@ -91,12 +90,12 @@ public class Human extends Entity {
         public void takeDamage(int damage) {
                 this.armor -= damage;
                 if (this.armor <= 0) {
-                        this.hitpoints += armor;        // as armor is negative
+                        this.hitpoints += armor;        // when armor drops below 0, transfer overlap damage to hitpoints
                         armor = 0;
                 }
 
                 if (this.hitpoints <= 0) {
-                        this.isAlive = false;
+                        this.alive = false;
                         this.hitpoints = 0;
                 }
         }

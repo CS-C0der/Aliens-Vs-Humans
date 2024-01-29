@@ -12,7 +12,7 @@ public abstract class Entity {
     // Instance variables
     protected int hitpoints;
     private String name;
-    protected boolean isAlive = true;
+    protected boolean alive = true;
     private Weapon weapon;
     private final Planet homePlanet;
     protected Team team;
@@ -53,7 +53,7 @@ public abstract class Entity {
     }
 
     public boolean isAlive(){
-        return isAlive;
+        return alive;
     }
 
     public Weapon getWeapon(){
@@ -62,17 +62,17 @@ public abstract class Entity {
 
     /**
      * Reduces hitpoints of entity by the value of "damage".
-     * If Hitpoints equals or is below zero isAlive is
-     * set to false. Also Hitpoints is set to zero.
+     * If hitpoints equals or is below zero isAlive is
+     * set to false. Also hitpoints is set to zero.
      * Hitpoints can not become negative!
      *
-     * @param damage Amount of Hitpoints to reduce
+     * @param damage Amount of hitpoints to reduce
      */
     // Instance methods
     public void takeDamage(int damage){
         this.hitpoints -= damage;
         if (this.hitpoints <= 0) {
-            this.isAlive = false;
+            this.alive = false;
             this.hitpoints = 0;
         }
     }
@@ -80,7 +80,7 @@ public abstract class Entity {
     /**
      * @return damage of equipped weapon
      */
-    public int doDamge(){
+    public int doDamage(){
         return weapon.getDamage();
     }
 

@@ -64,10 +64,10 @@ class EntityTest {
     @Test
     public void testDoDamage(){
         // remember: @BeforeEach sets Weapon to shotgun
-        assertEquals(entity.getWeapon().getDamage() , entity.doDamge() );
+        assertEquals(entity.getWeapon().getDamage() , entity.doDamage() );
         entity.setWeapon(Weapon.CROWBAR);
         // different result with crowbar?
-        assertEquals(entity.getWeapon().getDamage() , entity.doDamge() );
+        assertEquals(entity.getWeapon().getDamage() , entity.doDamage() );
     }
 
 }

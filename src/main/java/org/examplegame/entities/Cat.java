@@ -67,7 +67,7 @@ public class Cat extends Entity {
         if (this.hitpoints <= 0) {
             if (this.lives <= 1){
                 // lost its last life
-                this.isAlive = false;
+                this.alive = false;
                 this.hitpoints = 0;
             } else {
                 // next life with 100 HP
